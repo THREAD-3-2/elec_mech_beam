@@ -1,2 +1,2 @@
 # elec_mech_beam
-electromechanically coupled beam
+An electromechanically coupled beam model for dielectric elastomer actuators
