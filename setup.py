@@ -1,7 +1,7 @@
 """
-this file makes example_gni_project pip installable
+this file makes elec_mech_beam pip installable
 
-install example_gni_project in editable state by running
+install elec_mech_beam in editable state by running
 pip install -e .
 """
 
