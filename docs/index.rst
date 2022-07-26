@@ -1,37 +1,19 @@
 ========================================
- Documentation of `example_gni_project`
+ Documentation of `elec_mech_beam`
 ========================================
 
-`example_gni_project <https://github.com/MarkusLohmayer/example_gni_project>`_
-is a  pure Python library for
-solving initial value problems
-stated as
-first-order ordinary differential equations (i.e. a vector field on the state space)
-together with an initial condition (i.e. a point of the state space).
-A subset of the implemented methods is :ref:`symplectic <symplectic>`
-and hence particularly fitting for
-:ref:`initial value problems with Hamiltonian structure <hamiltonian_ivp>`.
-
-The library was used as part of the Geometric Numerical Integration course
-offered by the `Institute of Applied Dynamics <https://www.ltd.tf.fau.de/>`_
-in the summer semester of 2021.
-For this purpose, the students received the library
-with the contents of the file `example_gni_project/integrators.py` largely missing.
-The students' task was
-to implement a number of integration methods
-and to study their behavior.
-
+`elec_mech_beam <https://github.com/THREAD-3-2/elec_mech_beam>`_
+is a MATLAB code for an electromechanically coupled beam model for dielectric elastomer actuators, which is developed at 
+the `Institute of Applied Dynamics <https://www.ltd.tf.fau.de/>`_
+It is part of the source code for the paper `(Huang and Leyendecker, 2022) <https://dx.doi.org/10.1007/s00466-021-02115-0>`_.
+The theory is summarized in :ref:`ibvp <ibvp>`. The main file is at `src/main.m`
 
 Contents
 ========
 
 .. toctree::
    installation
-   example
-   ivp
-   integrators
-   plotting
-   convergence
+   ibvp
    matlab
    :maxdepth: 2
 

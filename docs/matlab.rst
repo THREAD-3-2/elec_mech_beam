@@ -8,16 +8,15 @@ This primitive example just shows how to document MATLAB code with Sphinx
 using the `matlabdomain extension <https://github.com/sphinx-contrib/matlabdomain/blob/master/README.rst>`_.
 
 
-MyModule
+src
 ========
 
-.. mat:automodule:: MyModule
+.. mat:automodule:: src
 
-:mod:`MyModule` module contains a function
-which implements the explicit Euler method:
+:mod:`src` module contains the source code :
     
-.. mat:autofunction:: MyModule.Forward_Euler
+.. mat:autofunction:: src.main
 
-The module further contains an example script:
+The parameters are set in:
 
-.. mat:autoscript:: MyModule.main
+.. mat:autoscript:: src.a_ini

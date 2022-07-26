@@ -1,7 +1,6 @@
-%++++++++++++++++++++++++++++++++++++++++++++++++++++
 %  An electromechanically coupled beam, July,2022, Dengpeng Huang @ LTD-FAU
 %  Ref.: D. Huang, S. Leyendecker. Computational Mechanics, 69(2022)(3):805-824.
-%++++++++++++++++++++++++++++++++++++++++++++++++++++
+%
 
 clear all; clc; close all;
 tic
