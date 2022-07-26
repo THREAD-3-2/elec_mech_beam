@@ -1,0 +1,167 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>MATLAB code &#8212; elec_mech_beam 0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Initial boundary value problem" href="ibvp.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="matlab-code">
+<span id="matlab"></span><h1>MATLAB code<a class="headerlink" href="#matlab-code" title="Permalink to this heading">¶</a></h1>
+<p>This primitive example just shows how to document MATLAB code with Sphinx
+using the <a class="reference external" href="https://github.com/sphinx-contrib/matlabdomain/blob/master/README.rst">matlabdomain extension</a>.</p>
+<section id="module-src">
+<span id="src"></span><h2>src<a class="headerlink" href="#module-src" title="Permalink to this heading">¶</a></h2>
+<p><code class="xref py py-mod docutils literal notranslate"><span class="pre">src</span></code> module contains the source code :</p>
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.main">
+<span class="sig-prename descclassname"><span class="pre">src.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.main" title="Permalink to this definition">¶</a></dt>
+<dd><p>An electromechanically coupled beam, July,2022, Dengpeng Huang &#64; LTD-FAU
+Ref.: D. Huang, S. Leyendecker. Computational Mechanics, 69(2022)(3):805-824.</p>
+</dd></dl>
+
+<p>The initial configuration and parameters are set firstly in:</p>
+<dl class="mat script">
+<dt class="sig sig-object mat" id="src.a_ini">
+<span class="sig-prename descclassname"><span class="pre">src.</span></span><span class="sig-name descname"><span class="pre">a_ini</span></span><a class="headerlink" href="#src.a_ini" title="Permalink to this definition">¶</a></dt>
+<dd><p>set Initial configuration, material parameters and boundary conditions</p>
+<p>parameter setting
+boundary conditions</p>
+</dd></dl>
+
+<p>The discrete Euler-Lagrange equations and tangents are derived using automatic differentiation in:</p>
+<dl class="mat script">
+<dt class="sig sig-object mat" id="src.b_dEL_AD">
+<span class="sig-prename descclassname"><span class="pre">src.</span></span><span class="sig-name descname"><span class="pre">b_dEL_AD</span></span><a class="headerlink" href="#src.b_dEL_AD" title="Permalink to this definition">¶</a></dt>
+<dd><p>derive Euler-Lagrange equations and tangents using automatic differentiation</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>param</strong> – initial conditions, boundary conditions, material parameter</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>symbolic functions of residual and tangent</p>
+</dd>
+</dl>
+</dd></dl>
+
+<p>The dEL equaitons are solve with the Newton-Raphson scheme in:</p>
+<dl class="mat script">
+<dt class="sig sig-object mat" id="src.c_NR">
+<span class="sig-prename descclassname"><span class="pre">src.</span></span><span class="sig-name descname"><span class="pre">c_NR</span></span><a class="headerlink" href="#src.c_NR" title="Permalink to this definition">¶</a></dt>
+<dd><p>Newton-Raphson scheme to solve the dEL equations</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>param</strong> – initial conditions, boundary conditions, material parameter</p></li>
+<li><p><strong>fns</strong> – symbolic functions of residual and tangent</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>discrete trajectory of the beam</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">elec_mech_beam</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ibvp.html">Initial boundary value problem</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">MATLAB code</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#module-src">src</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="ibvp.html" title="previous chapter">Initial boundary value problem</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2022, Dengpeng Huang.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.1.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/matlab.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
