@@ -17,9 +17,9 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'example_gni_project'
-copyright = '2022, Markus Lohmayer'
-author = 'Markus Lohmayer'
+project = 'elec_mech_beam'
+copyright = '2022, Dengpeng Huang'
+author = 'Dengpeng Huang'
 
 # The full version, including alpha/beta/rc tags
 release = '0.1'
@@ -42,7 +42,7 @@ extensions = [
 
 # specify the source folder of the MATLAB code
 # For a pure MATLAB project, you probably want to use `src` as the name.
-matlab_src_dir = "../matlab_src/"
+matlab_src_dir = "../"
 # For a pure MATLAB project, you can specify `mat` as the primary domain to save some typing,
 # e.g. `autoclass` instead of `mat:autoclass` (see matlab.rst file).
 # primary_domain = 'mat'
