@@ -17,7 +17,6 @@ install the package in a virtual environment like so:
 
     # activate virtual environment
     . ./venv/bin/activate
-
     # install the project in editable state
     pip install -e .
 
