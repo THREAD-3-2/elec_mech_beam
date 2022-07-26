@@ -26,6 +26,7 @@ jobs:
     # Run pytest
     - name: Run test suite
       run: |
+        pytest
         pytest --mypy
     # Run Sphinx
     - name: Build documentation (and run doctests)
