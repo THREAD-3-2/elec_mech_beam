@@ -37,63 +37,68 @@
             
   <section id="initial-boundary-value-problem">
 <span id="ibvp"></span><h1>Initial boundary value problem<a class="headerlink" href="#initial-boundary-value-problem" title="Permalink to this heading">¶</a></h1>
-<section id="general-initial-boundary-value-problem">
-<span id="general-ibvp"></span><h2>General initial boundary value problem<a class="headerlink" href="#general-initial-boundary-value-problem" title="Permalink to this heading">¶</a></h2>
-<p>The considered initial value problems are stated as
-a system of first-order ordinary differential equations
-defined via a function <span class="math notranslate nohighlight">\(f\)</span>
-together with an initial condition <span class="math notranslate nohighlight">\(x_0\)</span>:</p>
+<section id="balance-equations">
+<span id="mech-ibvp"></span><h2>Balance equations<a class="headerlink" href="#balance-equations" title="Permalink to this heading">¶</a></h2>
+<p>The local balance law of linear momentum in the dynamic process is given by</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
-    \dot{x} &amp;= X(x) \\
-    x(0) &amp;= x_0
+\[\begin{align}
+    \nabla_{\mathbf{X}} \cdot \mathbf{P} + \rho_0 \bar{\mathbf{b}} =\rho_0\mathbf{\ddot{u}} \qquad {\rm in} \quad B
     \,.
-\end{aligned}\end{split}\]</div>
-<p>Here, <span class="math notranslate nohighlight">\(x\)</span> is a function of time
-which takes values in the state space <span class="math notranslate nohighlight">\(\mathcal{X} = \mathbb{R}^n\)</span>,
-for some <span class="math notranslate nohighlight">\(n \in \mathbb{N}\)</span>.
-The right hand side <span class="math notranslate nohighlight">\(X \colon \mathcal{X} \rightarrow \mathcal{X}\)</span>
-defines a vector field on <span class="math notranslate nohighlight">\(\mathcal{X}\)</span>
-since for a flat state space <span class="math notranslate nohighlight">\(T \mathcal{X} \cong \mathcal{X}\)</span>.</p>
+\end{align}\]</div>
+<p>subject to the Dirichlet boundary conditions</p>
+<div class="math notranslate nohighlight">
+\[\begin{align}
+    \mathbf{u}&amp;=\bar{\mathbf{u}} \qquad {\rm on} \quad \partial_{u} B,
+    \,.
+\end{align}\]</div>
+<p>the Neumann boundary conditions</p>
+<div class="math notranslate nohighlight">
+\[\begin{align}
+    \mathbf{P}\cdot \mathbf{N}&amp;=\bar{\mathbf{T}} \qquad {\rm on} \quad \partial_{\sigma} B,
+    \,.
+\end{align}\]</div>
+<p>and the initial conditions</p>
+<div class="math notranslate nohighlight">
+\[\begin{align}
+    \mathbf{\dot{u}}=\mathbf{0},\mathbf{\ddot{u}}=\mathbf{0},
+\end{align}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\mathbf{P}\)</span> is the first Piola-Kirchhoff stress tensor, <span class="math notranslate nohighlight">\(\rho_0\)</span> is the mass density in initial configuration,
+<span class="math notranslate nohighlight">\(\bar{\mathbf{b}}\)</span> is the body force vector, <span class="math notranslate nohighlight">\(\mathbf{\ddot{u}}\)</span> is the acceleration, <span class="math notranslate nohighlight">\(\bar{\mathbf{u}}\)</span> is the prescribed displacement and
+<span class="math notranslate nohighlight">\(\bar{\mathbf{T}}\)</span> is the prescribed traction. The local balance of angular momentum reads</p>
+<div class="math notranslate nohighlight">
+\[\begin{align}
+    \mathbf{F}\mathbf{P}^T = \mathbf{P}\mathbf{F}^T,
+\end{align}\]</div>
+<p>in which <span class="math notranslate nohighlight">\(\mathbf{F}\)</span> is the deformation gradient defined as <span class="math notranslate nohighlight">\(\mathbf{F}=\partial\mathbf{x}(\mathbf{X},t)/ \partial \mathbf{X}\)</span>.</p>
 </section>
-<section id="hamiltonian-ivp">
-<span id="id1"></span><h2>Initial boundary value problem<a class="headerlink" href="#hamiltonian-ivp" title="Permalink to this heading">¶</a></h2>
-<p>the canonical Hamiltonian structure of initial value problems of the form</p>
+<section id="maxwell-equations">
+<span id="elec-ibvp"></span><h2>Maxwell equations<a class="headerlink" href="#maxwell-equations" title="Permalink to this heading">¶</a></h2>
+<p>By neglecting the magnetic field, the Maxwell equations are given by</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
-    \begin{bmatrix}
-        \dot{q} \\
-        \dot{p}
-    \end{bmatrix}
-    &amp;=
-    \begin{bmatrix}
-        0 &amp; 1 \\
-        -1 &amp; 0
-    \end{bmatrix}
+\[\begin{align}
+    \nabla_{\mathbf{X}} \times \mathbf{E}^e=\mathbf{0}, \;\;\;\; \nabla_{\mathbf{X}} \cdot \mathbf{D}=0 \qquad {\rm in} \quad B \label{ED}
     \,
-    \begin{bmatrix}
-        \frac{\partial H(q, p)}{\partial q} \\
-        \frac{\partial H(q, p)}{\partial p}
-    \end{bmatrix}
-    =
-    \begin{bmatrix}
-        +\frac{\partial H(q, p)}{\partial q} \\
-        -\frac{\partial H(q, p)}{\partial p}
-    \end{bmatrix}
-    \\
-    \begin{bmatrix}
-        q(0) \\
-        p(0)
-    \end{bmatrix}
-    &amp;=
-    \begin{bmatrix}
-        q_0 \\
-        p_0
-    \end{bmatrix}
-    \,.
-\end{aligned}\end{split}\]</div>
-<p>Here <span class="math notranslate nohighlight">\(H \colon \mathcal{X} \rightarrow \mathbb{R}\)</span> is the Hamiltonian
-which yields the sum of the kinetic energy and the potential energy of the system.</p>
+\end{align}\]</div>
+<p>subject to the Dirichlet boundary conditions</p>
+<div class="math notranslate nohighlight">
+\[\begin{align}
+    \phi&amp;=\bar{\phi} \qquad {\rm on} \quad \partial_{\phi} B
+    \,
+\end{align}\]</div>
+<p>and the Neumann boundary conditions</p>
+<div class="math notranslate nohighlight">
+\[\begin{align}
+    \mathbf{D}\cdot \mathbf{N}&amp;=\bar{Q} \qquad {\rm on} \quad \partial_D B
+    \,
+\end{align}\]</div>
+<p>with <span class="math notranslate nohighlight">\(\mathbf{E}^e\)</span> the electric field, <span class="math notranslate nohighlight">\(\mathbf{D}\)</span> the electric displacement in the initial configuration,
+<span class="math notranslate nohighlight">\(\phi\)</span> the electric potential, <span class="math notranslate nohighlight">\(\bar{\phi}\)</span> the prescribed electric potential, <span class="math notranslate nohighlight">\(\mathbf{N}\)</span> the outward unit normal vector
+and <span class="math notranslate nohighlight">\(\bar{Q}\)</span> the prescribed charges per unit area on the boundary <span class="math notranslate nohighlight">\(\partial_D B\)</span>.
+The Eq. (ref{ED}) leads to the definition of the electric field as the gradient of a scalar electric potential</p>
+<div class="math notranslate nohighlight">
+\[\begin{align}
+    \mathbf{E}^e=-\frac{\partial \phi}{\partial \mathbf{X}}. \label{E}
+\end{align}\]</div>
 </section>
 </section>
 
@@ -117,8 +122,8 @@ which yields the sum of the kinetic energy and the potential energy of the syste
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Initial boundary value problem</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#general-initial-boundary-value-problem">General initial boundary value problem</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#hamiltonian-ivp">Initial boundary value problem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#balance-equations">Balance equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#maxwell-equations">Maxwell equations</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="matlab.html">MATLAB code</a></li>
