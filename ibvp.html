@@ -43,19 +43,16 @@
 <div class="math notranslate nohighlight">
 \[\begin{align}
     \nabla_{\mathbf{X}} \cdot \mathbf{P} + \rho_0 \bar{\mathbf{b}} =\rho_0\mathbf{\ddot{u}} \qquad {\rm in} \quad B
-    \,.
 \end{align}\]</div>
 <p>subject to the Dirichlet boundary conditions</p>
 <div class="math notranslate nohighlight">
 \[\begin{align}
     \mathbf{u}&amp;=\bar{\mathbf{u}} \qquad {\rm on} \quad \partial_{u} B,
-    \,.
 \end{align}\]</div>
 <p>the Neumann boundary conditions</p>
 <div class="math notranslate nohighlight">
 \[\begin{align}
-    \mathbf{P}\cdot \mathbf{N}&amp;=\bar{\mathbf{T}} \qquad {\rm on} \quad \partial_{\sigma} B,
-    \,.
+    \mathbf{P}\cdot \mathbf{N}&amp;=\bar{\mathbf{T}} \qquad {\rm on} \quad \partial_{\sigma} B
 \end{align}\]</div>
 <p>and the initial conditions</p>
 <div class="math notranslate nohighlight">
@@ -76,29 +73,57 @@
 <p>By neglecting the magnetic field, the Maxwell equations are given by</p>
 <div class="math notranslate nohighlight">
 \[\begin{align}
-    \nabla_{\mathbf{X}} \times \mathbf{E}^e=\mathbf{0}, \;\;\;\; \nabla_{\mathbf{X}} \cdot \mathbf{D}=0 \qquad {\rm in} \quad B \label{ED}
-    \,
+    \nabla_{\mathbf{X}} \times \mathbf{E}^e=\mathbf{0}, \;\;\;\; \nabla_{\mathbf{X}} \cdot \mathbf{D}=0 \qquad {\rm in} \quad B
 \end{align}\]</div>
 <p>subject to the Dirichlet boundary conditions</p>
 <div class="math notranslate nohighlight">
 \[\begin{align}
     \phi&amp;=\bar{\phi} \qquad {\rm on} \quad \partial_{\phi} B
-    \,
 \end{align}\]</div>
 <p>and the Neumann boundary conditions</p>
 <div class="math notranslate nohighlight">
 \[\begin{align}
     \mathbf{D}\cdot \mathbf{N}&amp;=\bar{Q} \qquad {\rm on} \quad \partial_D B
-    \,
 \end{align}\]</div>
 <p>with <span class="math notranslate nohighlight">\(\mathbf{E}^e\)</span> the electric field, <span class="math notranslate nohighlight">\(\mathbf{D}\)</span> the electric displacement in the initial configuration,
 <span class="math notranslate nohighlight">\(\phi\)</span> the electric potential, <span class="math notranslate nohighlight">\(\bar{\phi}\)</span> the prescribed electric potential, <span class="math notranslate nohighlight">\(\mathbf{N}\)</span> the outward unit normal vector
 and <span class="math notranslate nohighlight">\(\bar{Q}\)</span> the prescribed charges per unit area on the boundary <span class="math notranslate nohighlight">\(\partial_D B\)</span>.
-The Eq. (ref{ED}) leads to the definition of the electric field as the gradient of a scalar electric potential</p>
+The Maxwell equations introduced above lead to the definition of the electric field as the gradient of a scalar electric potential</p>
 <div class="math notranslate nohighlight">
 \[\begin{align}
-    \mathbf{E}^e=-\frac{\partial \phi}{\partial \mathbf{X}}. \label{E}
+    \mathbf{E}^e=-\frac{\partial \phi}{\partial \mathbf{X}}.
 \end{align}\]</div>
+</section>
+<section id="electromechanical-coupling">
+<span id="em-ibvp"></span><h2>Electromechanical coupling<a class="headerlink" href="#electromechanical-coupling" title="Permalink to this heading">¶</a></h2>
+<p>When the external electric field is imposed to the body of dielectric elastomer, the contractive pressure will be induced due to
+the polarization effects and thus the deformation of the body will be generated. The coupling effect between the electric field
+and the mechanical deformation is described by the strain energy function $Omega(mathbf{F}, mathbf{E}^e)$ of the dielectric material
+in the constitutive equations</p>
+<div class="math notranslate nohighlight">
+\[\begin{align}
+    \mathbf{D}=-\rho_0\frac{\partial \Omega(\mathbf{F}, \mathbf{E}^e)}{\partial \mathbf{E}^e},  \;\;\;\;  \mathbf{P}=\rho_0\frac{\partial \Omega(\mathbf{F}, \mathbf{E}^e)}{\partial \mathbf{F}}.
+\end{align}\]</div>
+<p>For the dielectric materials, the electromechanical coupling can be described by the strain energy function with the additive form</p>
+<div class="math notranslate nohighlight">
+\[\begin{align}
+    \Omega(\mathbf{F}, \mathbf{E}^e) = \Omega^m (\mathbf{F}) + \Omega^{\rm em}(\mathbf{F}, \mathbf{E}^e)  + \Omega^e( \mathbf{E}^e),
+\end{align}\]</div>
+<p>with <span class="math notranslate nohighlight">\(\Omega^m (\mathbf{F})\)</span> referring to the purely mechanical behavior, <span class="math notranslate nohighlight">\(\Omega^{\rm em}(\mathbf{F}, \mathbf{E}^e)\)</span> referring
+to the electomechanical coupling and <span class="math notranslate nohighlight">\(\Omega^e( \mathbf{E}^e)\)</span> referring to the pure electric behavior. Accordingly, the first Piola-Kirchhoff
+stress can be written as two parts</p>
+<div class="math notranslate nohighlight">
+\[\begin{align}
+    \mathbf{P}=\rho_0\frac{\partial \Omega^m}{\partial \mathbf{F}}+\rho_0\frac{\partial \Omega^{em}}{\partial \mathbf{F}}.
+\end{align}\]</div>
+</section>
+<section id="beam-kinematics">
+<span id="kinematics-ibvp"></span><h2>beam kinematics<a class="headerlink" href="#beam-kinematics" title="Permalink to this heading">¶</a></h2>
+<p>here: kinematics</p>
+</section>
+<section id="beam-free-energy-function">
+<span id="strainenergy-ibvp"></span><h2>beam free energy function<a class="headerlink" href="#beam-free-energy-function" title="Permalink to this heading">¶</a></h2>
+<p>here: strain energy for beam</p>
 </section>
 </section>
 
@@ -124,6 +149,9 @@ The Eq. (ref{ED}) leads to the definition of the electric field as the gradient 
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Initial boundary value problem</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#balance-equations">Balance equations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#maxwell-equations">Maxwell equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#electromechanical-coupling">Electromechanical coupling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#beam-kinematics">beam kinematics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#beam-free-energy-function">beam free energy function</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="matlab.html">MATLAB code</a></li>
