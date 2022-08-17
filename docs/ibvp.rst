@@ -119,8 +119,8 @@ For an initially straight beam, the deformation gradient at a point :math:`(X^1,
 .. math::
     
     \begin{align}
-        \mathbf{F}(X^1, X^2, s,t)=\frac{\partial \mathbf{x}}{\partial \mathbf{X}}=\frac{\partial \mathbf{x}}{\partial X_i} \otimes  \mathbf{d}_i(s,0) \nonumber\\
-        =\left[ \mathbf{I} + \left(\frac{\partial \boldsymbol{\varphi}(s,t)}{\partial s} - \mathbf{d}_3(s,t) + X^1 \frac{\partial \mathbf{d}_1(s,t)}{\partial s} + X^2 \frac{\partial \mathbf{d}_2(s,t)}{\partial s} \right)\otimes  \mathbf{d}_3(s,t) \right] \boldsymbol{\Lambda}(s),
+        \mathbf{F}(X^1, X^2, s,t)&=\frac{\partial \mathbf{x}}{\partial \mathbf{X}}=\frac{\partial \mathbf{x}}{\partial X_i} \otimes  \mathbf{d}_i(s,0) \nonumber\\
+        &=\left[ \mathbf{I} + \left(\frac{\partial \boldsymbol{\varphi}(s,t)}{\partial s} - \mathbf{d}_3(s,t) + X^1 \frac{\partial \mathbf{d}_1(s,t)}{\partial s} + X^2 \frac{\partial \mathbf{d}_2(s,t)}{\partial s} \right)\otimes  \mathbf{d}_3(s,t) \right] \boldsymbol{\Lambda}(s),
     \end{align}
 
 with the rotation tensor :math:`\boldsymbol{\Lambda}(s)=\mathbf{d}_i(s,t) \otimes  \mathbf{d}_i(s,0)` 
@@ -148,8 +148,8 @@ Based on the formulation of the electric potential, the electric field at :math:
  .. math::
     
     \begin{align} 
-        \mathbf{E}^e(X^1,X^2,s)= -\frac{\partial \phi}{\partial X_i} \otimes  \mathbf{d}_i(s,0)\\
-        =-\left[ \alpha(s)  \mathbf{d}_1(s,0) + \beta(s)  \mathbf{d}_2(s,0) + \left( \frac{\partial \phi_o(s)}{\partial s}  + X^1 \frac{\partial  \alpha(s)}{\partial s} + X^2 \frac{\partial  \beta(s)}{\partial s} \right) \mathbf{d}_3(s,0) \right]. \label{Ee}
+        \mathbf{E}^e(X^1,X^2,s) &= -\frac{\partial \phi}{\partial X_i} \otimes  \mathbf{d}_i(s,0)\\
+        & =-\left[ \alpha(s)  \mathbf{d}_1(s,0) + \beta(s)  \mathbf{d}_2(s,0) + \left( \frac{\partial \phi_o(s)}{\partial s}  + X^1 \frac{\partial  \alpha(s)}{\partial s} + X^2 \frac{\partial  \beta(s)}{\partial s} \right) \mathbf{d}_3(s,0) \right]. \label{Ee}
     \end{align}
 
 
@@ -169,7 +169,7 @@ in the constitutive equations
         \mathbf{D}=-\rho_0\frac{\partial \Omega(\mathbf{F}, \mathbf{E}^e)}{\partial \mathbf{E}^e},  \;\;\;\;  \mathbf{P}=\rho_0\frac{\partial \Omega(\mathbf{F}, \mathbf{E}^e)}{\partial \mathbf{F}}.
     \end{align}
 
-For the dielectric materials, the electromechanical coupling can be described by the strain energy function with the additive form
+For the dielectric materials, the electromechanical coupling can be described by the free energy function with the additive form
 
 .. math::
 
@@ -178,11 +178,28 @@ For the dielectric materials, the electromechanical coupling can be described by
     \end{align}
 
 with :math:`\Omega^m (\mathbf{F})` referring to the purely mechanical behavior, :math:`\Omega^{\rm em}(\mathbf{F}, \mathbf{E}^e)` referring 
-to the electomechanical coupling and :math:`\Omega^e( \mathbf{E}^e)` referring to the pure electric behavior. Accordingly, the first Piola-Kirchhoff 
-stress can be written as two parts
+to the electomechanical coupling and :math:`\Omega^e( \mathbf{E}^e)` referring to the pure electric behavior.
+
+The strain energy density applied in continuum electromechanics is given by
 
 .. math::
-
+    
     \begin{align}
-        \mathbf{P}=\rho_0\frac{\partial \Omega^m}{\partial \mathbf{F}}+\rho_0\frac{\partial \Omega^{em}}{\partial \mathbf{F}}.
+        \Omega(\mathbf{C},\mathbf{E}^e)=\underbrace{ \frac{\mu}{2} \left( \mathbf{C} : \mathbf{1}-3 \right) - \mu {\rm ln} J + \frac{\lambda}{2} ({\rm ln} J)^2}_{\text{Neo-Hookean}} +\underbrace{c_1 \mathbf{E}^e \cdot \mathbf{E}^e + c_2 \mathbf{C} : (\mathbf{E}^e \otimes \mathbf{E}^e)}_{\text{Polarization in dielectric material}} - \underbrace{ \frac{1}{2} \varepsilon_0 J \mathbf{C}^{-1} : (\mathbf{E}^e \otimes \mathbf{E}^e)}_{\text{Free space term in vacuum}}
     \end{align}
+
+with :math:`\varepsilon_0` the vacuum permittivity, :math:`c_1` and :math:`c_2` the electrical parameters. 
+It can be observed that the strain energy is composed of three parts, the Neo-Hookean part referring to the pure elastic 
+behavior, the polarization part referring to the polarization in the condensed matter and the free space part referring to the 
+effect in vacuum. The last two terms characterize the electromechanical coupling.
+
+The strain energy function for beam is obtained by integrating :math:`\Omega(\mathbf{C},\mathbf{E}^e)` over the cross section
+
+.. math::
+    
+    \begin{align}
+        \Omega_b (\boldsymbol{\Gamma}, \mathbf{K}, \boldsymbol{\varepsilon}) =\int_{\Sigma} \Omega(\mathbf{C},\mathbf{E}^e) dA,
+    \end{align}
+
+where the integration can be evaluated with the numerical approach as well as the analytical approach. As the analytical approach, 
+the beam strain energy function :math:`\Omega_b` is explicitly formulated in the Appendix of the paper (Huang and Leyendecker, 2022).
