@@ -111,8 +111,8 @@ a principle basis of the cross section, and <span class="math notranslate nohigh
 </dl>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{align}
-    \mathbf{F}(X^1, X^2, s,t)=\frac{\partial \mathbf{x}}{\partial \mathbf{X}}=\frac{\partial \mathbf{x}}{\partial X_i} \otimes  \mathbf{d}_i(s,0) \nonumber\\
-    =\left[ \mathbf{I} + \left(\frac{\partial \boldsymbol{\varphi}(s,t)}{\partial s} - \mathbf{d}_3(s,t) + X^1 \frac{\partial \mathbf{d}_1(s,t)}{\partial s} + X^2 \frac{\partial \mathbf{d}_2(s,t)}{\partial s} \right)\otimes  \mathbf{d}_3(s,t) \right] \boldsymbol{\Lambda}(s),
+    \mathbf{F}(X^1, X^2, s,t)&amp;=\frac{\partial \mathbf{x}}{\partial \mathbf{X}}=\frac{\partial \mathbf{x}}{\partial X_i} \otimes  \mathbf{d}_i(s,0) \nonumber\\
+    &amp;=\left[ \mathbf{I} + \left(\frac{\partial \boldsymbol{\varphi}(s,t)}{\partial s} - \mathbf{d}_3(s,t) + X^1 \frac{\partial \mathbf{d}_1(s,t)}{\partial s} + X^2 \frac{\partial \mathbf{d}_2(s,t)}{\partial s} \right)\otimes  \mathbf{d}_3(s,t) \right] \boldsymbol{\Lambda}(s),
 \end{align}\end{split}\]</div>
 <p>with the rotation tensor <span class="math notranslate nohighlight">\(\boldsymbol{\Lambda}(s)=\mathbf{d}_i(s,t) \otimes  \mathbf{d}_i(s,0)\)</span>
 and <span class="math notranslate nohighlight">\(\boldsymbol{\Lambda}(s)^{-1}=\boldsymbol{\Lambda}(s)^T\)</span>.</p>
@@ -135,8 +135,8 @@ Based on the formulation of the electric potential, the electric field at <span 
 <blockquote>
 <div><div class="math notranslate nohighlight">
 \[\begin{split}\begin{align}
-    \mathbf{E}^e(X^1,X^2,s)= -\frac{\partial \phi}{\partial X_i} \otimes  \mathbf{d}_i(s,0)\\
-    =-\left[ \alpha(s)  \mathbf{d}_1(s,0) + \beta(s)  \mathbf{d}_2(s,0) + \left( \frac{\partial \phi_o(s)}{\partial s}  + X^1 \frac{\partial  \alpha(s)}{\partial s} + X^2 \frac{\partial  \beta(s)}{\partial s} \right) \mathbf{d}_3(s,0) \right]. \label{Ee}
+    \mathbf{E}^e(X^1,X^2,s) &amp;= -\frac{\partial \phi}{\partial X_i} \otimes  \mathbf{d}_i(s,0)\\
+    &amp; =-\left[ \alpha(s)  \mathbf{d}_1(s,0) + \beta(s)  \mathbf{d}_2(s,0) + \left( \frac{\partial \phi_o(s)}{\partial s}  + X^1 \frac{\partial  \alpha(s)}{\partial s} + X^2 \frac{\partial  \beta(s)}{\partial s} \right) \mathbf{d}_3(s,0) \right]. \label{Ee}
 \end{align}\end{split}\]</div>
 </div></blockquote>
 </section>
@@ -150,18 +150,29 @@ in the constitutive equations</p>
 \[\begin{align}
     \mathbf{D}=-\rho_0\frac{\partial \Omega(\mathbf{F}, \mathbf{E}^e)}{\partial \mathbf{E}^e},  \;\;\;\;  \mathbf{P}=\rho_0\frac{\partial \Omega(\mathbf{F}, \mathbf{E}^e)}{\partial \mathbf{F}}.
 \end{align}\]</div>
-<p>For the dielectric materials, the electromechanical coupling can be described by the strain energy function with the additive form</p>
+<p>For the dielectric materials, the electromechanical coupling can be described by the free energy function with the additive form</p>
 <div class="math notranslate nohighlight">
 \[\begin{align}
     \Omega(\mathbf{F}, \mathbf{E}^e) = \Omega^m (\mathbf{F}) + \Omega^{\rm em}(\mathbf{F}, \mathbf{E}^e)  + \Omega^e( \mathbf{E}^e),
 \end{align}\]</div>
 <p>with <span class="math notranslate nohighlight">\(\Omega^m (\mathbf{F})\)</span> referring to the purely mechanical behavior, <span class="math notranslate nohighlight">\(\Omega^{\rm em}(\mathbf{F}, \mathbf{E}^e)\)</span> referring
-to the electomechanical coupling and <span class="math notranslate nohighlight">\(\Omega^e( \mathbf{E}^e)\)</span> referring to the pure electric behavior. Accordingly, the first Piola-Kirchhoff
-stress can be written as two parts</p>
+to the electomechanical coupling and <span class="math notranslate nohighlight">\(\Omega^e( \mathbf{E}^e)\)</span> referring to the pure electric behavior.</p>
+<p>The strain energy density applied in continuum electromechanics is given by</p>
 <div class="math notranslate nohighlight">
 \[\begin{align}
-    \mathbf{P}=\rho_0\frac{\partial \Omega^m}{\partial \mathbf{F}}+\rho_0\frac{\partial \Omega^{em}}{\partial \mathbf{F}}.
+    \Omega(\mathbf{C},\mathbf{E}^e)=\underbrace{ \frac{\mu}{2} \left( \mathbf{C} : \mathbf{1}-3 \right) - \mu {\rm ln} J + \frac{\lambda}{2} ({\rm ln} J)^2}_{\text{Neo-Hookean}} +\underbrace{c_1 \mathbf{E}^e \cdot \mathbf{E}^e + c_2 \mathbf{C} : (\mathbf{E}^e \otimes \mathbf{E}^e)}_{\text{Polarization in dielectric material}} - \underbrace{ \frac{1}{2} \varepsilon_0 J \mathbf{C}^{-1} : (\mathbf{E}^e \otimes \mathbf{E}^e)}_{\text{Free space term in vacuum}}
 \end{align}\]</div>
+<p>with <span class="math notranslate nohighlight">\(\varepsilon_0\)</span> the vacuum permittivity, <span class="math notranslate nohighlight">\(c_1\)</span> and <span class="math notranslate nohighlight">\(c_2\)</span> the electrical parameters.
+It can be observed that the strain energy is composed of three parts, the Neo-Hookean part referring to the pure elastic
+behavior, the polarization part referring to the polarization in the condensed matter and the free space part referring to the
+effect in vacuum. The last two terms characterize the electromechanical coupling.</p>
+<p>The strain energy function for beam is obtained by integrating <span class="math notranslate nohighlight">\(\Omega(\mathbf{C},\mathbf{E}^e)\)</span> over the cross section</p>
+<div class="math notranslate nohighlight">
+\[\begin{align}
+    \Omega_b (\boldsymbol{\Gamma}, \mathbf{K}, \boldsymbol{\varepsilon}) =\int_{\Sigma} \Omega(\mathbf{C},\mathbf{E}^e) dA,
+\end{align}\]</div>
+<p>where the integration can be evaluated with the numerical approach as well as the analytical approach. As the analytical approach,
+the beam strain energy function <span class="math notranslate nohighlight">\(\Omega_b\)</span> is explicitly formulated in the Appendix of the paper (Huang and Leyendecker, 2022).</p>
 </section>
 </section>
 
