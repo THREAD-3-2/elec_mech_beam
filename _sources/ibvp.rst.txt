@@ -106,7 +106,7 @@ beam is given by
 .. math::
 
     \begin{align}
-    \mathbf{x}(X^k,s,t)=\boldsymbol{\varphi}(s,t)+X^k \mathbf{d}_k(s,t), \;\;\;\; k=1,2.
+        \mathbf{x}(X^k,s,t)=\boldsymbol{\varphi}(s,t)+X^k \mathbf{d}_k(s,t), \;\;\;\; k=1,2.
     \end{align}
 
 where :math:`s \in [0,L] \subset \mathbb{R}` denotes the arc-length of the line of the centroids :math:`\boldsymbol{\varphi}(s,0)\in \mathbb{R}^3` in 
@@ -119,38 +119,37 @@ For an initially straight beam, the deformation gradient at a point :math:`(X^1,
 .. math::
     
     \begin{align}
-    \mathbf{F}(X^1, X^2, s,t)&=\frac{\partial \mathbf{x}}{\partial \mathbf{X}}=\frac{\partial \mathbf{x}}{\partial X_i} \otimes  \mathbf{d}_i(s,0) \nonumber\\
-    &=\left[ \mathbf{I} + \left(\frac{\partial \boldsymbol{\varphi}(s,t)}{\partial s} - \mathbf{d}_3(s,t) + X^1 \frac{\partial \mathbf{d}_1(s,t)}{\partial s} + X^2 \frac{\partial \mathbf{d}_2(s,t)}{\partial s} \right)\otimes  \mathbf{d}_3(s,t) \right] \boldsymbol{\Lambda}(s),
+        \mathbf{F}(X^1, X^2, s,t)=\frac{\partial \mathbf{x}}{\partial \mathbf{X}}=\frac{\partial \mathbf{x}}{\partial X_i} \otimes  \mathbf{d}_i(s,0) \nonumber\\
+        =\left[ \mathbf{I} + \left(\frac{\partial \boldsymbol{\varphi}(s,t)}{\partial s} - \mathbf{d}_3(s,t) + X^1 \frac{\partial \mathbf{d}_1(s,t)}{\partial s} + X^2 \frac{\partial \mathbf{d}_2(s,t)}{\partial s} \right)\otimes  \mathbf{d}_3(s,t) \right] \boldsymbol{\Lambda}(s),
     \end{align}
 
-with the rotation tensor  :math:`\boldsymbol{\Lambda}(s)=\mathbf{d}_i(s,t) \otimes  \mathbf{d}_i(s,0)` 
-and  :math:`\boldsymbol{\Lambda}(s)^{-1}=\boldsymbol{\Lambda}(s)^T`.
+with the rotation tensor :math:`\boldsymbol{\Lambda}(s)=\mathbf{d}_i(s,t) \otimes  \mathbf{d}_i(s,0)` 
+and :math:`\boldsymbol{\Lambda}(s)^{-1}=\boldsymbol{\Lambda}(s)^T`.
 
 To formulate the electromechanical coupling problem, the electric potential will serve as the extra degree of freedom. In this work, 
-the electric potential at the point :math:`(X^1,X^2,s)` is represented by the electric potential at the beam node plus the increment 
-from the beam node to the point :math:`(X^1,X^2)` on the cross section. Similar to the local description of the cross section,
- the electric potential on the cross section is given by
+the electric potential at a point :math:`(X^1,X^2,s)` is represented by the electric potential at the beam node plus the increment 
+from the beam node to the point :math:`(X^1,X^2)` on the cross section. Similar to the local description of the cross section, the electric potential on the cross section is given by
 
  .. math::
     
     \begin{align} 
-    \phi (X^1,X^2,s)=\phi _o(s) + X^1 \alpha(s) + X^2 \beta(s)
+        \phi (X^1,X^2,s)=\phi _o(s) + X^1 \alpha(s) + X^2 \beta(s)
     \end{align}
 
 with :math:`\phi _o(s)` the electric potential at the beam node, :math:`\alpha(s)` and :math:`\beta(s)` the incremental parameters 
-of the electric potential in the directions of :math:`\mathbf{d}_1` and :math:`\mathbf{d}_2`, respectively. If the electric 
-potential is constant within the cross section (i.e. :math:`\alpha,\beta=0`), the electric field only exists in 
+of the electric potential in the directions of :math:`\mathbf{d}_1` and :math:`\mathbf{d}_2` , respectively. If the electric 
+potential is constant within the cross section (i.e. :math:`\alpha,\beta=0` ), the electric field only exists in 
 the :math:`\mathbf{d}_3` direction, which will lead to the uniaxial contraction in beam.
 
-According to the Maxwell equations, the electric field is defined as the gradient of the  electric potential :math:`\phi`. 
+According to the Maxwell equations, the electric field is defined as the gradient of the  electric potential :math:`\phi` . 
 To compute the gradient of the electric potential for the beam, a similar approach as the deformation gradient can be adopted. 
 Based on the formulation of the electric potential, the electric field at :math:`(X^1,X^2,s)` in the beam can be computed as
 
  .. math::
     
     \begin{align} 
-    \mathbf{E}^e(X^1,X^2,s)&= -\frac{\partial \phi}{\partial X_i} \otimes  \mathbf{d}_i(s,0)\\
-    &=-\left[ \alpha(s)  \mathbf{d}_1(s,0) + \beta(s)  \mathbf{d}_2(s,0) + \left( \frac{\partial \phi_o(s)}{\partial s}  + X^1 \frac{\partial  \alpha(s)}{\partial s} + X^2 \frac{\partial  \beta(s)}{\partial s} \right) \mathbf{d}_3(s,0) \right]. \label{Ee}
+        \mathbf{E}^e(X^1,X^2,s)= -\frac{\partial \phi}{\partial X_i} \otimes  \mathbf{d}_i(s,0)\\
+        =-\left[ \alpha(s)  \mathbf{d}_1(s,0) + \beta(s)  \mathbf{d}_2(s,0) + \left( \frac{\partial \phi_o(s)}{\partial s}  + X^1 \frac{\partial  \alpha(s)}{\partial s} + X^2 \frac{\partial  \beta(s)}{\partial s} \right) \mathbf{d}_3(s,0) \right]. \label{Ee}
     \end{align}
 
 
