@@ -37,9 +37,10 @@
 <h1>Documentation of <cite>elec_mech_beam</cite><a class="headerlink" href="#documentation-of-elec-mech-beam" title="Permalink to this heading">¶</a></h1>
 <p><a class="reference external" href="https://github.com/THREAD-3-2/elec_mech_beam">elec_mech_beam</a>
 is a MATLAB code for an electromechanically coupled beam model for dielectric elastomer actuators, which is developed at
-the <a class="reference external" href="https://www.ltd.tf.fau.de/">Institute of Applied Dynamics</a>
+the <a class="reference external" href="https://www.ltd.tf.fau.de/">Institute of Applied Dynamics</a>.
 It is part of the source code for the paper <a class="reference external" href="https://dx.doi.org/10.1007/s00466-021-02115-0">(Huang and Leyendecker, 2022)</a>.
-The theory is summarized in <a class="reference internal" href="ibvp.html#ibvp"><span class="std std-ref">ibvp</span></a>. The main file is at <cite>src/main.m</cite></p>
+The initial boundary value problem is described in <a class="reference internal" href="ibvp.html#ibvp"><span class="std std-ref">ibvp</span></a>. To solve this problem, the variational integrator is
+applied as shown in <a class="reference internal" href="vi.html#vi"><span class="std std-ref">vi</span></a>. The code can be run from a main file at <cite>src/main.m</cite>.</p>
 <section id="contents">
 <h2>Contents<a class="headerlink" href="#contents" title="Permalink to this heading">¶</a></h2>
 <div class="toctree-wrapper compound">
@@ -52,8 +53,13 @@ The theory is summarized in <a class="reference internal" href="ibvp.html#ibvp">
 <li class="toctree-l2"><a class="reference internal" href="ibvp.html#balance-equations">Balance equations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ibvp.html#maxwell-equations">Maxwell equations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ibvp.html#electromechanical-coupling">Electromechanical coupling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ibvp.html#beam-kinematics">beam kinematics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ibvp.html#beam-free-energy-function">beam free energy function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ibvp.html#beam-kinematics">Beam kinematics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ibvp.html#beam-free-energy-function">Beam free energy function</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="vi.html">Variational integrator</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="vi.html#continuous-setting">Continuous setting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vi.html#discrete-euler-lagrange-equations">Discrete Euler-Lagrange equations</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="matlab.html">MATLAB code</a><ul>
@@ -93,6 +99,7 @@ The theory is summarized in <a class="reference internal" href="ibvp.html#ibvp">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ibvp.html">Initial boundary value problem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vi.html">Variational integrator</a></li>
 <li class="toctree-l1"><a class="reference internal" href="matlab.html">MATLAB code</a></li>
 </ul>
 

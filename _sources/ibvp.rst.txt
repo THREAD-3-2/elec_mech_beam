@@ -131,7 +131,7 @@ stress can be written as two parts
 
 .. _kinematics_ibvp:
 
-beam kinematics
+Beam kinematics
 ---------------
 
 here: kinematics
@@ -139,7 +139,7 @@ here: kinematics
 
 .. _strainenergy_ibvp:
 
-beam free energy function
+Beam free energy function
 -------------------------
 
 here: strain energy for beam
