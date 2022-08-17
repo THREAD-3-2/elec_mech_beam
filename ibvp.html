@@ -96,7 +96,50 @@ The Maxwell equations introduced above lead to the definition of the electric fi
 </section>
 <section id="kinematics-in-the-beam">
 <span id="kinematics-ibvp"></span><h2>Kinematics in the beam<a class="headerlink" href="#kinematics-in-the-beam" title="Permalink to this heading">¶</a></h2>
-<p>here: kinematics</p>
+<p>In the Cosserat formulation of geometrically exact beam, the placement of a material point in the current configuration of the
+beam is given by</p>
+<div class="math notranslate nohighlight">
+\[\begin{align}
+\mathbf{x}(X^k,s,t)=\boldsymbol{\varphi}(s,t)+X^k \mathbf{d}_k(s,t), \;\;\;\; k=1,2.
+\end{align}\]</div>
+<p>where <span class="math notranslate nohighlight">\(s \in [0,L] \subset \mathbb{R}\)</span> denotes the arc-length of the line of the centroids <span class="math notranslate nohighlight">\(\boldsymbol{\varphi}(s,0)\in \mathbb{R}^3\)</span> in
+the initial configuration, <span class="math notranslate nohighlight">\(\mathbf{d}_i(s,t)\)</span> is an orthonormal triad at <span class="math notranslate nohighlight">\(s\)</span> with the directors <span class="math notranslate nohighlight">\(\mathbf{d}_k(s,t), k=1,2\)</span> spanning
+a principle basis of the cross section, and <span class="math notranslate nohighlight">\(X^k\)</span> are the curvilinear coordinates on the cross section.</p>
+<dl class="simple">
+<dt>For an initially straight beam, the deformation gradient at a point <span class="math notranslate nohighlight">\((X^1, X^2, s)\)</span> in the beam can be written as,</dt><dd><p>see (Auricchio, 2008),</p>
+</dd>
+</dl>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+\mathbf{F}(X^1, X^2, s,t)&amp;=\frac{\partial \mathbf{x}}{\partial \mathbf{X}}=\frac{\partial \mathbf{x}}{\partial X_i} \otimes  \mathbf{d}_i(s,0) \nonumber\\
+&amp;=\left[ \mathbf{I} + \left(\frac{\partial \boldsymbol{\varphi}(s,t)}{\partial s} - \mathbf{d}_3(s,t) + X^1 \frac{\partial \mathbf{d}_1(s,t)}{\partial s} + X^2 \frac{\partial \mathbf{d}_2(s,t)}{\partial s} \right)\otimes  \mathbf{d}_3(s,t) \right] \boldsymbol{\Lambda}(s),
+\end{align}\end{split}\]</div>
+<p>with the rotation tensor  <span class="math notranslate nohighlight">\(\boldsymbol{\Lambda}(s)=\mathbf{d}_i(s,t) \otimes  \mathbf{d}_i(s,0)\)</span>
+and  <span class="math notranslate nohighlight">\(\boldsymbol{\Lambda}(s)^{-1}=\boldsymbol{\Lambda}(s)^T\)</span>.</p>
+<p>To formulate the electromechanical coupling problem, the electric potential will serve as the extra degree of freedom. In this work,
+the electric potential at the point <span class="math notranslate nohighlight">\((X^1,X^2,s)\)</span> is represented by the electric potential at the beam node plus the increment
+from the beam node to the point <span class="math notranslate nohighlight">\((X^1,X^2)\)</span> on the cross section. Similar to the local description of the cross section,</p>
+<blockquote>
+<div><p>the electric potential on the cross section is given by</p>
+<div class="math notranslate nohighlight">
+\[\begin{align}
+\phi (X^1,X^2,s)=\phi _o(s) + X^1 \alpha(s) + X^2 \beta(s)
+\end{align}\]</div>
+</div></blockquote>
+<p>with <span class="math notranslate nohighlight">\(\phi _o(s)\)</span> the electric potential at the beam node, <span class="math notranslate nohighlight">\(\alpha(s)\)</span> and <span class="math notranslate nohighlight">\(\beta(s)\)</span> the incremental parameters
+of the electric potential in the directions of <span class="math notranslate nohighlight">\(\mathbf{d}_1\)</span> and <span class="math notranslate nohighlight">\(\mathbf{d}_2\)</span>, respectively. If the electric
+potential is constant within the cross section (i.e. <span class="math notranslate nohighlight">\(\alpha,\beta=0\)</span>), the electric field only exists in
+the <span class="math notranslate nohighlight">\(\mathbf{d}_3\)</span> direction, which will lead to the uniaxial contraction in beam.</p>
+<p>According to the Maxwell equations, the electric field is defined as the gradient of the  electric potential <span class="math notranslate nohighlight">\(\phi\)</span>.
+To compute the gradient of the electric potential for the beam, a similar approach as the deformation gradient can be adopted.
+Based on the formulation of the electric potential, the electric field at <span class="math notranslate nohighlight">\((X^1,X^2,s)\)</span> in the beam can be computed as</p>
+<blockquote>
+<div><div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+\mathbf{E}^e(X^1,X^2,s)&amp;= -\frac{\partial \phi}{\partial X_i} \otimes  \mathbf{d}_i(s,0)\\
+&amp;=-\left[ \alpha(s)  \mathbf{d}_1(s,0) + \beta(s)  \mathbf{d}_2(s,0) + \left( \frac{\partial \phi_o(s)}{\partial s}  + X^1 \frac{\partial  \alpha(s)}{\partial s} + X^2 \frac{\partial  \beta(s)}{\partial s} \right) \mathbf{d}_3(s,0) \right]. \label{Ee}
+\end{align}\end{split}\]</div>
+</div></blockquote>
 </section>
 <section id="coupled-free-energy-in-the-beam">
 <span id="strainenergy-ibvp"></span><h2>Coupled free energy in the beam<a class="headerlink" href="#coupled-free-energy-in-the-beam" title="Permalink to this heading">¶</a></h2>
