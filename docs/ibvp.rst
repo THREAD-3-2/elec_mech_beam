@@ -160,7 +160,7 @@ Coupled free energy in the beam
 
 When the external electric field is imposed to the body of dielectric elastomer, the contractive pressure will be induced due to 
 the polarization effects and thus the deformation of the body will be generated. The coupling effect between the electric field 
-and the mechanical deformation is described by the free energy function $\Omega(\mathbf{F}, \mathbf{E}^e)$ of the dielectric material 
+and the mechanical deformation is described by the free energy function :math:`\Omega(\mathbf{F}, \mathbf{E}^e)` of the dielectric material 
 in the constitutive equations
 
 .. math::
@@ -180,7 +180,7 @@ For the dielectric materials, the electromechanical coupling can be described by
 with :math:`\Omega^m (\mathbf{F})` referring to the purely mechanical behavior, :math:`\Omega^{\rm em}(\mathbf{F}, \mathbf{E}^e)` referring 
 to the electomechanical coupling and :math:`\Omega^e( \mathbf{E}^e)` referring to the pure electric behavior.
 
-The strain energy density applied in continuum electromechanics is given by
+A widely used strain energy density for dielectric elastomer is given by
 
 .. math::
     
