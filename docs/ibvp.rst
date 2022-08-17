@@ -94,14 +94,23 @@ The Maxwell equations introduced above lead to the definition of the electric fi
         \mathbf{E}^e=-\frac{\partial \phi}{\partial \mathbf{X}}.
     \end{align}
 
-.. _em_ibvp:
 
-Electromechanical coupling
----------------------------
+.. _kinematics_ibvp:
+
+Kinematics in the beam
+----------------------
+
+here: kinematics
+
+
+.. _strainenergy_ibvp:
+
+Coupled free energy in the beam
+-------------------------------
 
 When the external electric field is imposed to the body of dielectric elastomer, the contractive pressure will be induced due to 
 the polarization effects and thus the deformation of the body will be generated. The coupling effect between the electric field 
-and the mechanical deformation is described by the strain energy function $\Omega(\mathbf{F}, \mathbf{E}^e)$ of the dielectric material 
+and the mechanical deformation is described by the free energy function $\Omega(\mathbf{F}, \mathbf{E}^e)$ of the dielectric material 
 in the constitutive equations
 
 .. math::
@@ -127,19 +136,3 @@ stress can be written as two parts
     \begin{align}
         \mathbf{P}=\rho_0\frac{\partial \Omega^m}{\partial \mathbf{F}}+\rho_0\frac{\partial \Omega^{em}}{\partial \mathbf{F}}.
     \end{align}
-
-
-.. _kinematics_ibvp:
-
-Beam kinematics
----------------
-
-here: kinematics
-
-
-.. _strainenergy_ibvp:
-
-Beam free energy function
--------------------------
-
-here: strain energy for beam
