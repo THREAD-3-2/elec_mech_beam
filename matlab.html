@@ -35,11 +35,11 @@
             
   <section id="matlab-code">
 <span id="matlab"></span><h1>MATLAB code<a class="headerlink" href="#matlab-code" title="Permalink to this heading">¶</a></h1>
-<p>This primitive example just shows how to document MATLAB code with Sphinx
+<p>This MATLAB code is documented with Sphinx
 using the <a class="reference external" href="https://github.com/sphinx-contrib/matlabdomain/blob/master/README.rst">matlabdomain extension</a>.</p>
 <section id="module-src">
 <span id="src"></span><h2>src<a class="headerlink" href="#module-src" title="Permalink to this heading">¶</a></h2>
-<p><code class="xref py py-mod docutils literal notranslate"><span class="pre">src</span></code> module contains the source code :</p>
+<p><code class="xref py py-mod docutils literal notranslate"><span class="pre">src</span></code> module contains the following source code files:</p>
 <dl class="mat function">
 <dt class="sig sig-object mat" id="src.main">
 <span class="sig-prename descclassname"><span class="pre">src.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.main" title="Permalink to this definition">¶</a></dt>
@@ -47,48 +47,12 @@ using the <a class="reference external" href="https://github.com/sphinx-contrib/
 Ref.: D. Huang, S. Leyendecker. Computational Mechanics, 69(2022)(3):805-824.</p>
 </dd></dl>
 
-<p>The initial configuration and parameters are set firstly in:</p>
-<dl class="mat script">
-<dt class="sig sig-object mat" id="src.a_ini">
-<span class="sig-prename descclassname"><span class="pre">src.</span></span><span class="sig-name descname"><span class="pre">a_ini</span></span><a class="headerlink" href="#src.a_ini" title="Permalink to this definition">¶</a></dt>
-<dd><p>set Initial configuration, material parameters and boundary conditions</p>
-<p>parameter setting
-boundary conditions</p>
-</dd></dl>
-
-<p>The discrete Euler-Lagrange equations and tangents are derived using automatic differentiation in:</p>
-<dl class="mat script">
-<dt class="sig sig-object mat" id="src.b_dEL_AD">
-<span class="sig-prename descclassname"><span class="pre">src.</span></span><span class="sig-name descname"><span class="pre">b_dEL_AD</span></span><a class="headerlink" href="#src.b_dEL_AD" title="Permalink to this definition">¶</a></dt>
-<dd><p>derive Euler-Lagrange equations and tangents using automatic differentiation</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>param</strong> – initial conditions, boundary conditions, material parameter</p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>symbolic functions of residual and tangent</p>
-</dd>
-</dl>
-</dd></dl>
-
-<p>The dEL equaitons are solve with the Newton-Raphson scheme in:</p>
-<dl class="mat script">
-<dt class="sig sig-object mat" id="src.c_NR">
-<span class="sig-prename descclassname"><span class="pre">src.</span></span><span class="sig-name descname"><span class="pre">c_NR</span></span><a class="headerlink" href="#src.c_NR" title="Permalink to this definition">¶</a></dt>
-<dd><p>Newton-Raphson scheme to solve the dEL equations</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>param</strong> – initial conditions, boundary conditions, material parameter</p></li>
-<li><p><strong>fns</strong> – symbolic functions of residual and tangent</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>discrete trajectory of the beam</p>
-</dd>
-</dl>
-</dd></dl>
-
+<p>The initial configuration and parameters are set firstly in:
+.. mat:autoscript:: src.a_ini</p>
+<p>The discrete Euler-Lagrange equations and tangents are derived using automatic differentiation in:
+.. mat:autoscript:: src.b_dEL_AD</p>
+<p>The dEL equaitons are solve with the Newton-Raphson scheme in:
+.. mat:autoscript:: src.c_NR</p>
 </section>
 </section>
 
