@@ -1,5 +1,5 @@
 function fns = b_dEL_AD(param)
-% derive Euler-Lagrange equations and tangents using automatic differentiation
+% derive discrete Euler-Lagrange equations and tangents using automatic differentiation
 %
 % :param param: initial conditions, boundary conditions, material parameter
 %
