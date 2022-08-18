@@ -17,11 +17,8 @@ src
     
 .. mat:autofunction:: src.main
 
-The initial configuration and parameters are set firstly in:
 .. mat:autoscript:: src.a_ini
 
-The discrete Euler-Lagrange equations and tangents are derived using automatic differentiation in:
 .. mat:autoscript:: src.b_dEL_AD
 
-The dEL equaitons are solve with the Newton-Raphson scheme in:
 .. mat:autoscript:: src.c_NR
