@@ -146,5 +146,61 @@ where :math:`\mathbf{u}_{n+1}` is the generalized configuration acting as the un
         \mathbf{f}_{n-1}^{\rm ext+}=\frac{\Delta t}{2} \mathbf{f}^{\rm vis} (\frac{\mathbf{q}_{n-1}+\mathbf{q}_n}{2},\frac{\mathbf{q}_{n-1}-\mathbf{q}_n}{\Delta t}).
     \end{align}
 
+The internal null space matrix at time :math:`t_n` is written as
 
+.. math::
+    
+    \begin{align}
+        \mathbf{P}_{\rm int}(\mathbf{q}_n)=
+        \begin{bmatrix}                           
+            \mathbf{I} & \mathbf{0} & \mathbf{0}\\                                               
+            \mathbf{0} & -\hat{\mathbf{d}}_{1,n} & \mathbf{0}\\   
+            \mathbf{0} & -\hat{\mathbf{d}}_{2,n} & \mathbf{0}\\  
+            \mathbf{0} & -\hat{\mathbf{d}}_{3,n} & \mathbf{0}\\
+            \mathbf{0}& \mathbf{0}& \mathbf{I}
+        \end{bmatrix}, \label{null}
+    \end{align}
 
+where :math:`\hat{\mathbf{d}}_{i,n}` denotes the skew-symmetric matrix corresponding to the director vector 
+:math:`\mathbf{d}_{i,n}` at :math:`t_n` and :math:`\mathbf{I}` is the 3 by 3 identity matrix. For a multibody dynamic system 
+composed of flexible beam actuators, rigid bodies, joints and constraints, the null space matrix can be designed by considering 
+the electric potential as extra degree of freedom as well.
+
+To solve the discrete Euler-Lagrange equations efficiently, the system can be reduced further into the minimal possible dimensions 
+by use of the nodal reparametrization. The generalized configuration of the electromechanically coupled beam is specified by
+
+.. math::
+    
+    \begin{align}
+        \mathbf{u}=\begin{bmatrix} \mathbf{u}_\varphi& \boldsymbol\theta&\mathbf{v}\end{bmatrix}^T
+    \end{align}
+
+with :math:`\mathbf{u}_\varphi,  \boldsymbol\theta$ and $\mathbf{v}` characterizing the incremental displacement, the incremental 
+rotation and the incremental electric potential, respectively. In this case, the nodal configuration for the next time step can 
+be updated as
+
+.. math::
+    
+    \begin{align}
+        \mathbf{q}_{n+1} = \mathbf{F}_d ({\mathbf{u}_{n+1}}, \mathbf{q}_{n})=
+        \begin{bmatrix}
+            \boldsymbol{\varphi}_n+\mathbf{u}_\varphi\\
+            {\rm exp}(\hat{\boldsymbol\theta})\cdot \mathbf{d}_{1,n}\\
+            {\rm exp}(\hat{\boldsymbol\theta})\cdot \mathbf{d}_{2,n}\\
+            {\rm exp}(\hat{\boldsymbol\theta})\cdot \mathbf{d}_{3,n}\\
+            \boldsymbol{\phi} + \mathbf{v}
+        \end{bmatrix}.
+    \end{align}
+
+By means of the nodal reparametrization, the unknowns of the discrete Euler-Lagrange equation are changed from :math:`\mathbf{q}_{n+1}` to the generalized 
+variables :math:`\mathbf{u}_{n+1}`. The nonlinear equation system is solved by use of the  Newton-Rapson algorithm with the tangent 
+matrix at iteration :math:`i`
+
+.. math::
+    
+    \begin{align}
+        \mathbf{K}_T^i
+        =\mathbf{P}^T(\mathbf{q}_n)  \frac{\partial \mathbf{R}^L(\mathbf{q}_{n+1}^i)}{\partial \mathbf{q}_{n+1}^i} \frac{\partial \mathbf{q}_{n+1}(\mathbf{u}_{n+1}^i)}{\partial \mathbf{u}_{n+1}^i},
+    \end{align}
+
+in which :math:`\mathbf{R}^L(\mathbf{q}_{n+1})` is the residual of the discrete Euler-Lagrange equation.

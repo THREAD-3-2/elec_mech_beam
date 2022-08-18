@@ -135,6 +135,51 @@ matrix <span class="math notranslate nohighlight">\(\mathbf{P}_d\)</span> are ap
     \mathbf{f}_n^{\rm ext-}=\frac{\Delta t}{2} \mathbf{f}^{\rm vis} (\frac{\mathbf{q}_{n+1}+\mathbf{q}_n}{2},\frac{\mathbf{q}_{n+1}-\mathbf{q}_n}{\Delta t}),
     \mathbf{f}_{n-1}^{\rm ext+}=\frac{\Delta t}{2} \mathbf{f}^{\rm vis} (\frac{\mathbf{q}_{n-1}+\mathbf{q}_n}{2},\frac{\mathbf{q}_{n-1}-\mathbf{q}_n}{\Delta t}).
 \end{align}\]</div>
+<p>The internal null space matrix at time <span class="math notranslate nohighlight">\(t_n\)</span> is written as</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+    \mathbf{P}_{\rm int}(\mathbf{q}_n)=
+    \begin{bmatrix}
+        \mathbf{I} &amp; \mathbf{0} &amp; \mathbf{0}\\
+        \mathbf{0} &amp; -\hat{\mathbf{d}}_{1,n} &amp; \mathbf{0}\\
+        \mathbf{0} &amp; -\hat{\mathbf{d}}_{2,n} &amp; \mathbf{0}\\
+        \mathbf{0} &amp; -\hat{\mathbf{d}}_{3,n} &amp; \mathbf{0}\\
+        \mathbf{0}&amp; \mathbf{0}&amp; \mathbf{I}
+    \end{bmatrix}, \label{null}
+\end{align}\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\hat{\mathbf{d}}_{i,n}\)</span> denotes the skew-symmetric matrix corresponding to the director vector
+<span class="math notranslate nohighlight">\(\mathbf{d}_{i,n}\)</span> at <span class="math notranslate nohighlight">\(t_n\)</span> and <span class="math notranslate nohighlight">\(\mathbf{I}\)</span> is the 3 by 3 identity matrix. For a multibody dynamic system
+composed of flexible beam actuators, rigid bodies, joints and constraints, the null space matrix can be designed by considering
+the electric potential as extra degree of freedom as well.</p>
+<p>To solve the discrete Euler-Lagrange equations efficiently, the system can be reduced further into the minimal possible dimensions
+by use of the nodal reparametrization. The generalized configuration of the electromechanically coupled beam is specified by</p>
+<div class="math notranslate nohighlight">
+\[\begin{align}
+    \mathbf{u}=\begin{bmatrix} \mathbf{u}_\varphi&amp; \boldsymbol\theta&amp;\mathbf{v}\end{bmatrix}^T
+\end{align}\]</div>
+<p>with <span class="math notranslate nohighlight">\(\mathbf{u}_\varphi,  \boldsymbol\theta$ and $\mathbf{v}\)</span> characterizing the incremental displacement, the incremental
+rotation and the incremental electric potential, respectively. In this case, the nodal configuration for the next time step can
+be updated as</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+    \mathbf{q}_{n+1} = \mathbf{F}_d ({\mathbf{u}_{n+1}}, \mathbf{q}_{n})=
+    \begin{bmatrix}
+        \boldsymbol{\varphi}_n+\mathbf{u}_\varphi\\
+        {\rm exp}(\hat{\boldsymbol\theta})\cdot \mathbf{d}_{1,n}\\
+        {\rm exp}(\hat{\boldsymbol\theta})\cdot \mathbf{d}_{2,n}\\
+        {\rm exp}(\hat{\boldsymbol\theta})\cdot \mathbf{d}_{3,n}\\
+        \boldsymbol{\phi} + \mathbf{v}
+    \end{bmatrix}.
+\end{align}\end{split}\]</div>
+<p>By means of the nodal reparametrization, the unknowns of the discrete Euler-Lagrange equation are changed from <span class="math notranslate nohighlight">\(\mathbf{q}_{n+1}\)</span> to the generalized
+variables <span class="math notranslate nohighlight">\(\mathbf{u}_{n+1}\)</span>. The nonlinear equation system is solved by use of the  Newton-Rapson algorithm with the tangent
+matrix at iteration <span class="math notranslate nohighlight">\(i\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{align}
+    \mathbf{K}_T^i
+    =\mathbf{P}^T(\mathbf{q}_n)  \frac{\partial \mathbf{R}^L(\mathbf{q}_{n+1}^i)}{\partial \mathbf{q}_{n+1}^i} \frac{\partial \mathbf{q}_{n+1}(\mathbf{u}_{n+1}^i)}{\partial \mathbf{u}_{n+1}^i},
+\end{align}\]</div>
+<p>in which <span class="math notranslate nohighlight">\(\mathbf{R}^L(\mathbf{q}_{n+1})\)</span> is the residual of the discrete Euler-Lagrange equation.</p>
 </section>
 </section>
 
