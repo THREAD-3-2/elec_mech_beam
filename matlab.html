@@ -87,6 +87,9 @@ boundary conditions</p>
 </dl>
 </dd></dl>
 
+</section>
+<section id="integrator">
+<h2>integrator<a class="headerlink" href="#integrator" title="Permalink to this heading">¶</a></h2>
 <dl class="mat script">
 <dt class="sig sig-object mat" id="src.integrator.constraints">
 <span class="sig-prename descclassname"><span class="pre">src.integrator.</span></span><span class="sig-name descname"><span class="pre">constraints</span></span><a class="headerlink" href="#src.integrator.constraints" title="Permalink to this definition">¶</a></dt>
@@ -103,6 +106,361 @@ boundary conditions</p>
 <dd class="field-even"><p>constraints</p>
 </dd>
 </dl>
+</dd></dl>
+
+<dl class="mat script">
+<dt class="sig sig-object mat" id="src.integrator.elmass01">
+<span class="sig-prename descclassname"><span class="pre">src.integrator.</span></span><span class="sig-name descname"><span class="pre">elmass01</span></span><a class="headerlink" href="#src.integrator.elmass01" title="Permalink to this definition">¶</a></dt>
+<dd><p>(consistent) mass matrix for beam element</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>eref</strong> – eref = […, phi^A,(d1)^A,(d2)^A,(d3)^A, … ](0); A=1,2</p></li>
+<li><p><strong>inertia</strong> – inertia = (rho*A, M_1, M_2)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Me, consistent elemental mass matrix (15*2 x 15*2)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat script">
+<dt class="sig sig-object mat" id="src.integrator.exp_operator">
+<span class="sig-prename descclassname"><span class="pre">src.integrator.</span></span><span class="sig-name descname"><span class="pre">exp_operator</span></span><a class="headerlink" href="#src.integrator.exp_operator" title="Permalink to this definition">¶</a></dt>
+<dd><p>exponential map</p>
+</dd></dl>
+
+<dl class="mat script">
+<dt class="sig sig-object mat" id="src.integrator.ext_constraints">
+<span class="sig-prename descclassname"><span class="pre">src.integrator.</span></span><span class="sig-name descname"><span class="pre">ext_constraints</span></span><a class="headerlink" href="#src.integrator.ext_constraints" title="Permalink to this definition">¶</a></dt>
+<dd><p>external constraints</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>q</strong> – current configuraiton</p></li>
+<li><p><strong>q_ref</strong> – reference configuraiton</p></li>
+<li><p><strong>param</strong> – parameters</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>external constraints</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat script">
+<dt class="sig sig-object mat" id="src.integrator.ext_potEn">
+<span class="sig-prename descclassname"><span class="pre">src.integrator.</span></span><span class="sig-name descname"><span class="pre">ext_potEn</span></span><a class="headerlink" href="#src.integrator.ext_potEn" title="Permalink to this definition">¶</a></dt>
+<dd><p>external potential energy</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>q</strong> – current configuraiton</p></li>
+<li><p><strong>_ref</strong> – reference configuraiton</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>external potential energy</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat script">
+<dt class="sig sig-object mat" id="src.integrator.hat_vec">
+<span class="sig-prename descclassname"><span class="pre">src.integrator.</span></span><span class="sig-name descname"><span class="pre">hat_vec</span></span><a class="headerlink" href="#src.integrator.hat_vec" title="Permalink to this definition">¶</a></dt>
+<dd><p>skew-symmetric matrix with axial vector a
+see eq(28) in Betsch[06]</p>
+</dd></dl>
+
+<dl class="mat script">
+<dt class="sig sig-object mat" id="src.integrator.int_constraints">
+<span class="sig-prename descclassname"><span class="pre">src.integrator.</span></span><span class="sig-name descname"><span class="pre">int_constraints</span></span><a class="headerlink" href="#src.integrator.int_constraints" title="Permalink to this definition">¶</a></dt>
+<dd><p>internal constraints</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>q</strong> – current configuration</p></li>
+<li><p><strong>param</strong> – parameters</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>internal constraints</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat script">
+<dt class="sig sig-object mat" id="src.integrator.int_potEn_bm_w">
+<span class="sig-prename descclassname"><span class="pre">src.integrator.</span></span><span class="sig-name descname"><span class="pre">int_potEn_bm_w</span></span><a class="headerlink" href="#src.integrator.int_potEn_bm_w" title="Permalink to this definition">¶</a></dt>
+<dd><p>evaluate terms in the strain energy function</p>
+</dd></dl>
+
+<dl class="mat script">
+<dt class="sig sig-object mat" id="src.integrator.int_potEn_bm">
+<span class="sig-prename descclassname"><span class="pre">src.integrator.</span></span><span class="sig-name descname"><span class="pre">int_potEn_bm</span></span><a class="headerlink" href="#src.integrator.int_potEn_bm" title="Permalink to this definition">¶</a></dt>
+<dd><p>strain energy computed from beam kinematics</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>eref</strong> – nodal configuraitons of beam element in reference configuraiton</p></li>
+<li><p><strong>eq</strong> – nodal configuraitons of beam element in current configuraiton</p></li>
+<li><p><strong>param</strong> – parameters</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>strain energy</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat script">
+<dt class="sig sig-object mat" id="src.integrator.int_potEn_cm">
+<span class="sig-prename descclassname"><span class="pre">src.integrator.</span></span><span class="sig-name descname"><span class="pre">int_potEn_cm</span></span><a class="headerlink" href="#src.integrator.int_potEn_cm" title="Permalink to this definition">¶</a></dt>
+<dd><p>strain energy computed from kinematics in contunuum mechanics</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>eref</strong> – nodal configuraitons of beam element in reference configuraiton</p></li>
+<li><p><strong>eq</strong> – nodal configuraitons of beam element in current configuraiton</p></li>
+<li><p><strong>param</strong> – parameters</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>strain energy</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat script">
+<dt class="sig sig-object mat" id="src.integrator.int_potEn">
+<span class="sig-prename descclassname"><span class="pre">src.integrator.</span></span><span class="sig-name descname"><span class="pre">int_potEn</span></span><a class="headerlink" href="#src.integrator.int_potEn" title="Permalink to this definition">¶</a></dt>
+<dd><p>internal potential energy</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>q</strong> – current configuraiton</p></li>
+<li><p><strong>q_ref</strong> – reference configuraiton</p></li>
+<li><p><strong>param</strong> – parameters</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>internal potential energy</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat script">
+<dt class="sig sig-object mat" id="src.integrator.kinEnergy_new">
+<span class="sig-prename descclassname"><span class="pre">src.integrator.</span></span><span class="sig-name descname"><span class="pre">kinEnergy_new</span></span><a class="headerlink" href="#src.integrator.kinEnergy_new" title="Permalink to this definition">¶</a></dt>
+<dd><p>kinetic energy</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>q_dot</strong> – velocity</p></li>
+<li><p><strong>param</strong> – parameters</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>kinetic energy</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat script">
+<dt class="sig sig-object mat" id="src.integrator.LagrangeEqu">
+<span class="sig-prename descclassname"><span class="pre">src.integrator.</span></span><span class="sig-name descname"><span class="pre">LagrangeEqu</span></span><a class="headerlink" href="#src.integrator.LagrangeEqu" title="Permalink to this definition">¶</a></dt>
+<dd><p>discrete Lagrange</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>q_n</strong> – configuraiton at step n</p></li>
+<li><p><strong>q_np1</strong> – configuraiton at step n+1</p></li>
+<li><p><strong>q_ref</strong> – configuraiton in reference configuraiton</p></li>
+<li><p><strong>param</strong> – parameters</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>discrete Lagrange</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat script">
+<dt class="sig sig-object mat" id="src.integrator.null_space_matrix">
+<span class="sig-prename descclassname"><span class="pre">src.integrator.</span></span><span class="sig-name descname"><span class="pre">null_space_matrix</span></span><a class="headerlink" href="#src.integrator.null_space_matrix" title="Permalink to this definition">¶</a></dt>
+<dd><p>null space matrix</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>q_bm</strong> – current configuraiton</p></li>
+<li><p><strong>param</strong> – parameters</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>null space matrix P</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat script">
+<dt class="sig sig-object mat" id="src.integrator.RK">
+<span class="sig-prename descclassname"><span class="pre">src.integrator.</span></span><span class="sig-name descname"><span class="pre">RK</span></span><a class="headerlink" href="#src.integrator.RK" title="Permalink to this definition">¶</a></dt>
+<dd><p>evaluate residual and tangent for step n</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>X</strong> – configuraiton at step n+1</p></li>
+<li><p><strong>q_nm1</strong> – configuraiton at step n-1</p></li>
+<li><p><strong>q_n</strong> – configuraiton at step n</p></li>
+<li><p><strong>param</strong> – parameters</p></li>
+<li><p><strong>fns</strong> – symbolic functions</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>residual and tangent</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat script">
+<dt class="sig sig-object mat" id="src.integrator.RK0">
+<span class="sig-prename descclassname"><span class="pre">src.integrator.</span></span><span class="sig-name descname"><span class="pre">RK0</span></span><a class="headerlink" href="#src.integrator.RK0" title="Permalink to this definition">¶</a></dt>
+<dd><p>evaluate residual and tangent for step 1</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>X</strong> – configuraiton at step n+1</p></li>
+<li><p><strong>q_n</strong> – configuraiton at step n</p></li>
+<li><p><strong>param</strong> – parameters</p></li>
+<li><p><strong>fns</strong> – symbolic functions</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>residual and tangent</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat script">
+<dt class="sig sig-object mat" id="src.integrator.update">
+<span class="sig-prename descclassname"><span class="pre">src.integrator.</span></span><span class="sig-name descname"><span class="pre">update</span></span><a class="headerlink" href="#src.integrator.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>nodal reparametrization</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dx</strong> – generalized configuration</p></li>
+<li><p><strong>q</strong> – redandent configuraiton</p></li>
+<li><p><strong>param</strong> – parameters</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>updated redandent configuraiton</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat script">
+<dt class="sig sig-object mat" id="src.integrator.viscos_force_PF">
+<span class="sig-prename descclassname"><span class="pre">src.integrator.</span></span><span class="sig-name descname"><span class="pre">viscos_force_PF</span></span><a class="headerlink" href="#src.integrator.viscos_force_PF" title="Permalink to this definition">¶</a></dt>
+<dd><p>1st Piola-Kirchhoff stress (Kelvin–Voigt viscosity model) and deformation gradient F in element j</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>eref</strong> – nodal configuraitons of beam element in reference configuraiton</p></li>
+<li><p><strong>eq</strong> – nodal configuraitons of beam element in current configuraiton</p></li>
+<li><p><strong>e_dot</strong> – nodal velocity of beam element in current configuraiton</p></li>
+<li><p><strong>XY</strong> – coordinates of integration point in cross section</p></li>
+<li><p><strong>param</strong> – parameters</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>1st Piola-Kirchhoff stress and deformation gradient F</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat script">
+<dt class="sig sig-object mat" id="src.integrator.viscos_force">
+<span class="sig-prename descclassname"><span class="pre">src.integrator.</span></span><span class="sig-name descname"><span class="pre">viscos_force</span></span><a class="headerlink" href="#src.integrator.viscos_force" title="Permalink to this definition">¶</a></dt>
+<dd><p>viscosity force vector as external forces</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>q_n</strong> – configuraiton at step n</p></li>
+<li><p><strong>q_np1</strong> – configuraiton at step n+1</p></li>
+<li><p><strong>q_ref</strong> – reference configuraiton</p></li>
+<li><p><strong>param</strong> – parameters</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>viscosity force vector</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="pre-post-processing">
+<h2>pre_post_processing<a class="headerlink" href="#pre-post-processing" title="Permalink to this heading">¶</a></h2>
+<dl class="mat script">
+<dt class="sig sig-object mat" id="src.pre_post_processing.Energy">
+<span class="sig-prename descclassname"><span class="pre">src.pre_post_processing.</span></span><span class="sig-name descname"><span class="pre">Energy</span></span><a class="headerlink" href="#src.pre_post_processing.Energy" title="Permalink to this definition">¶</a></dt>
+<dd><p>plot int pot energy and kinetic energy</p>
+</dd></dl>
+
+<dl class="mat script">
+<dt class="sig sig-object mat" id="src.pre_post_processing.Hami_Energy_red">
+<span class="sig-prename descclassname"><span class="pre">src.pre_post_processing.</span></span><span class="sig-name descname"><span class="pre">Hami_Energy_red</span></span><a class="headerlink" href="#src.pre_post_processing.Hami_Energy_red" title="Permalink to this definition">¶</a></dt>
+<dd><p>reduced Kinetic energy: p*invM*p/2</p>
+</dd></dl>
+
+<dl class="mat script">
+<dt class="sig sig-object mat" id="src.pre_post_processing.Hami_Energy">
+<span class="sig-prename descclassname"><span class="pre">src.pre_post_processing.</span></span><span class="sig-name descname"><span class="pre">Hami_Energy</span></span><a class="headerlink" href="#src.pre_post_processing.Hami_Energy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Kinetic energy: p*invM*p/2</p>
+</dd></dl>
+
+<dl class="mat script">
+<dt class="sig sig-object mat" id="src.pre_post_processing.Hamilton">
+<span class="sig-prename descclassname"><span class="pre">src.pre_post_processing.</span></span><span class="sig-name descname"><span class="pre">Hamilton</span></span><a class="headerlink" href="#src.pre_post_processing.Hamilton" title="Permalink to this definition">¶</a></dt>
+<dd><p>plot discrete Hamiltonian</p>
+</dd></dl>
+
+<dl class="mat script">
+<dt class="sig sig-object mat" id="src.pre_post_processing.Hd_red">
+<span class="sig-prename descclassname"><span class="pre">src.pre_post_processing.</span></span><span class="sig-name descname"><span class="pre">Hd_red</span></span><a class="headerlink" href="#src.pre_post_processing.Hd_red" title="Permalink to this definition">¶</a></dt>
+<dd><p>momentum p-</p>
+</dd></dl>
+
+<dl class="mat script">
+<dt class="sig sig-object mat" id="src.pre_post_processing.path_s">
+<span class="sig-prename descclassname"><span class="pre">src.pre_post_processing.</span></span><span class="sig-name descname"><span class="pre">path_s</span></span><a class="headerlink" href="#src.pre_post_processing.path_s" title="Permalink to this definition">¶</a></dt>
+<dd><p>generates initial configutaiton q for straight beam with length L</p>
+</dd></dl>
+
+<dl class="mat script">
+<dt class="sig sig-object mat" id="src.pre_post_processing.plot_FE_mov">
+<span class="sig-prename descclassname"><span class="pre">src.pre_post_processing.</span></span><span class="sig-name descname"><span class="pre">plot_FE_mov</span></span><a class="headerlink" href="#src.pre_post_processing.plot_FE_mov" title="Permalink to this definition">¶</a></dt>
+<dd><p>creates a movie from Q and colors the beam if strain results are
+provided, saved to code folder under sim_vid</p>
+</dd></dl>
+
+<dl class="mat script">
+<dt class="sig sig-object mat" id="src.pre_post_processing.plot_FE">
+<span class="sig-prename descclassname"><span class="pre">src.pre_post_processing.</span></span><span class="sig-name descname"><span class="pre">plot_FE</span></span><a class="headerlink" href="#src.pre_post_processing.plot_FE" title="Permalink to this definition">¶</a></dt>
+<dd><p>plot configuration of the beam</p>
+</dd></dl>
+
+<dl class="mat script">
+<dt class="sig sig-object mat" id="src.pre_post_processing.plot_theta">
+<span class="sig-prename descclassname"><span class="pre">src.pre_post_processing.</span></span><span class="sig-name descname"><span class="pre">plot_theta</span></span><a class="headerlink" href="#src.pre_post_processing.plot_theta" title="Permalink to this definition">¶</a></dt>
+<dd><p>plot rotation angle of the end node</p>
+</dd></dl>
+
+<dl class="mat script">
+<dt class="sig sig-object mat" id="src.pre_post_processing.plot_u">
+<span class="sig-prename descclassname"><span class="pre">src.pre_post_processing.</span></span><span class="sig-name descname"><span class="pre">plot_u</span></span><a class="headerlink" href="#src.pre_post_processing.plot_u" title="Permalink to this definition">¶</a></dt>
+<dd><p>plot position/displacement of the end node (0,0,0.1)</p>
 </dd></dl>
 
 </section>
@@ -131,6 +489,8 @@ boundary conditions</p>
 <li class="toctree-l1"><a class="reference internal" href="vi.html">Variational integrator</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">MATLAB code</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#module-src">src</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#integrator">integrator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pre-post-processing">pre_post_processing</a></li>
 </ul>
 </li>
 </ul>
