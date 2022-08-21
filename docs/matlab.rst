@@ -25,3 +25,5 @@ src
 
 
 .. mat:autoscript:: src.c_NR
+
+.. mat:autoscript:: src.integrator.constraints
