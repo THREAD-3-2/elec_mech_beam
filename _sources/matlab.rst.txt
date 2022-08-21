@@ -26,8 +26,8 @@ src
 
 .. mat:autoscript:: src.c_NR
 
-integrator
-==========
+src/integrator
+==============
 
 .. mat:autoscript:: src.integrator.constraints
 
@@ -67,8 +67,8 @@ integrator
 
 .. mat:autoscript:: src.integrator.viscos_force
 
-pre_post_processing
-===================
+src/pre_post_processing
+=======================
 
 .. mat:autoscript:: src.pre_post_processing.Energy
 
