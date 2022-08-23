@@ -19,7 +19,7 @@ v_node     =[  eq(13:15,1),  eq(13:15,2)];
 
 % Gauss integration
 ngp=2; % 2 Gauss points are used
-g1=1/sqrt(3); % 1/sqrt(3), see PW book table 4.1
+g1=1/sqrt(3); % 1/sqrt(3), see Wriggers FEM book table 4.1
 w1=1;
 xsi=[-g1; g1]; wp=[w1; w1];
 
@@ -28,7 +28,7 @@ W_mech=0; W_ele=0;
 
 for i=1:ngp
     
-    % Lagrange type linear shape functions:, see PW book eq(4.17)
+    % Lagrange type linear shape functions:, see Wriggers FEM book eq(4.17)
     N(1,1)=(1-xsi(i))/2; %N1
     N(1,2)=(1+xsi(i))/2;%N2       1*2
     

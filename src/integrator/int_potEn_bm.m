@@ -19,7 +19,7 @@ v_node     = [  eq(13:15,1),  eq(13:15,2)];
 
 %% gauss point
 ngp = 2; % number of gauss point in arc length
-g1 = 1/sqrt(3); % 1/sqrt(3), see PW book table 4.1
+g1 = 1/sqrt(3); % 1/sqrt(3), see Wriggers FEM book table 4.1
 w1 = 1;
 xsi = [-g1; g1]; wp = [w1; w1];
 
@@ -35,7 +35,7 @@ for i = 1:ngp
     dNr(1,2) = 1/2;  %dN2dxi
     
     % d_phi/d_xi
-    dp0_dx = phi0_node(:,1)'*dNr(1) + phi0_node(:,2)'*dNr(2); % Jacobian matrix=dX/dxi=XI*dN/dxi, see PW book eq(4.35)
+    dp0_dx = phi0_node(:,1)'*dNr(1) + phi0_node(:,2)'*dNr(2); % Jacobian matrix=dX/dxi=XI*dN/dxi, see Wriggers FEM book eq(4.35)
     dp_dx = phi_node(:,1)'*dNr(1) + phi_node(:,2)'*dNr(2); % 1*3
     
     % d(xi)

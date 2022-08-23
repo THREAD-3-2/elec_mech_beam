@@ -1,7 +1,7 @@
 function [Me]=elmass01(eref, inertia)
 % (consistent) mass matrix for beam element
 %
-% :param eref: eref = [..., phi^A,(d1)^A,(d2)^A,(d3)^A, ... ](0); A=1,2
+% :param eref: eref = [..., phi^A, (d1)^A, (d2)^A, (d3)^A, ... ](0); A=1,2
 % :param inertia: inertia = (rho*A, M_1, M_2)
 %
 % :returns: Me, consistent elemental mass matrix (15*2 x 15*2)
@@ -17,11 +17,11 @@ phi0_node=eref(1:3, :); % coordinates of nodes, phi
 
 % Gauss integration
 ngp=2;
-g1=1/sqrt(3); % 1/sqrt(3), see PW book table 4.1
+g1=1/sqrt(3); % 1/sqrt(3), see Wriggers FEM book table 4.1
 w1=1;
 xsi=[-g1; g1]; wp=[w1; w1];
 
-% shape functions: linear, see PW book eq(4.17)
+% shape functions: linear, see Wriggers FEM book eq(4.17)
 N(:,1)=(1-xsi)/2; N(:,2)=(1+xsi)/2;
 
 % derivatives of shape functions with respect to normalized coordinate
@@ -29,7 +29,7 @@ dNr([1:2],1)=-1/2; dNr([1:2],2)= 1/2;
 
 %% mass matrix, see P.Wriggers FEM book p126
 % d_phi/d_xi
-dp0_dx=dNr*phi0_node'; % Jacobian matrix=dX/dxi=XI*dN/dxi, see PW book eq(4.35)
+dp0_dx=dNr*phi0_node'; % Jacobian matrix=dX/dxi=XI*dN/dxi, see Wriggers FEM book eq(4.35)
 
 % elemental mass matrix size =(elnode*eldof)*(elnode*eldof)=30*30
 eldof=15*elnode;

@@ -1,5 +1,5 @@
 function [Q] = c_NR(param, fns)
-% Newton-Raphson scheme to solve the dEL equations
+% Newton-Raphson scheme to solve the discrete Euler-Lagrange equations
 %
 % :param param: initial conditions, boundary conditions, material parameter
 % :param fns: symbolic functions of residual and tangent
@@ -34,7 +34,7 @@ switch param.eboun
         end
 end
 
-du = zeros(param.dim_q - 6*param.n_kn_nodes, 1); % initialize the generalized configuration eq.(78)
+du = zeros(param.dim_q - 6*param.n_kn_nodes, 1); % initialize the generalized configuration eq.(78), (Huang and Leyendecker, 2022)
 q_1 = Q(:,1); % initialize q_1 with q_0
 q_1 = update(du, q_1, param); % nodal reparametrization eq.(79), impose b.c.
 
@@ -42,9 +42,9 @@ q_1 = update(du, q_1, param); % nodal reparametrization eq.(79), impose b.c.
 [F, dF] = RK0(q_1, param.q_ref, param, fns);
 
 % null space projection
-T_d = null_space_matrix(param.q_ref, param); % null space matrix P(q_n) in eq.(80)
+T_d = null_space_matrix(param.q_ref, param); % null space matrix P(q_n) in eq.(80), (Huang and Leyendecker, 2022)
 F = T_d'*F; % residual 
-T_D = null_space_matrix(q_1, param); % da/du in eq.(80)
+T_D = null_space_matrix(q_1, param); % da/du in eq.(80), (Huang and Leyendecker, 2022)
 Kt = T_d'* dF *T_D; % tangent
 
 % crossing out rows and colums where b.c. are impose
@@ -112,9 +112,9 @@ for i = 2:length(param.time)-1
     [F, dF] = RK(q_np1, q_nm1, q_n, param, fns);
     
     % null space projection
-    T_d = null_space_matrix(q_n, param); % null space matrix P(q_n) in eq.(80)
+    T_d = null_space_matrix(q_n, param); % null space matrix P(q_n) in eq.(80), (Huang and Leyendecker, 2022)
     F = T_d'*F; % residual
-    T_D = null_space_matrix(q_np1, param); % da/du in eq.(80)
+    T_D = null_space_matrix(q_np1, param); % da/du in eq.(80), (Huang and Leyendecker, 2022)
     Kt = T_d'* dF *T_D; % tangent
     
     % crossing out rows and colums where b.c. are impose

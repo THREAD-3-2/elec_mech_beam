@@ -1,5 +1,5 @@
 function [q] = path_s(L, param)
-% generates initial configutaiton q for straight beam with length L
+% generating initial configutaiton q for straight beam with length L
 %
 
 %% beam geometry (length, width, height in [mm])

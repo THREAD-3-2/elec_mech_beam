@@ -1,17 +1,18 @@
-% set Initial configuration, material parameters and boundary conditions
+% set initial configuration, material parameters and boundary conditions
 %
+
 %% parameter setting
 % boundary conditions
-param.eboun = 'end'; % 'end' (contraction) / 'torsion' / 'shear' / 'bending'/'test'
+param.eboun = 'end'; % 'end' (contraction) / 'torsion' / 'shear' / 'bending'
 
 switch param.eboun
     case 'end'
         param.timestep  = 1e-4; % in [ms]
         param.totaltime = 0.1; % in [ms]
-        param.L = 0.1;
-        param.b = 0.02; param.h = 0.02;
-        param.ncell = 1;
-        param.nec = 5; % number ele in each DEA cell
+        param.L = 0.1; % length of beam
+        param.b = 0.02; param.h = 0.02; % size of cross section
+        param.ncell = 1; % number of DEA cell
+        param.nec = 5; % number element in each DEA cell
         param.n_el_nodes = param.ncell*param.nec; % number of element
         param.n_kn_nodes = param.n_el_nodes+1;% number of node
         param.eta = 0; % viscosity
@@ -78,7 +79,7 @@ param.inertia = [param.A*param.rho,  I1*param.rho,  I2*param.rho];
 q_ref = reshape(q_ref,15*param.n_kn_nodes,1);
 
 param.q_ref = q_ref; % reference configuration for strain calculation
-param.p_0 = zeros(size(param.q_ref));
+param.p_0 = zeros(size(param.q_ref)); % initial momenta
 
 %% elemental mass matrix
 param.Me = zeros(15*2,15*2,param.n_el_nodes);

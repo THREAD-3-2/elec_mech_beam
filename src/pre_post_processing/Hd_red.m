@@ -1,3 +1,4 @@
+% plot reduced discrete Hamiltonian
 
 pminus_fnc=fncs.pminus_fnc;
 G_fnc = fncs.G_fnc;

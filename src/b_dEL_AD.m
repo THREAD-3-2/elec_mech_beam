@@ -43,20 +43,20 @@ fns.pminus = casadi.Function('pminus_symb',{q_n_var, q_np1_var}, {pminus_symb});
 
 %% +++++++++++++Variational integrator+++++++++++++++++++++++++++++++++++++++++++++++++++++
 % Residual
-R_vi_symb = dLplus + dLminus + f_extminus + f_extplus; % dEL in eq.(73)
+R_vi_symb = dLplus + dLminus + f_extminus + f_extplus; % dEL in eq.(73), (Huang and Leyendecker, 2022)
 fns.R_vi = casadi.Function('R_vi', {q_nm1_var, q_n_var, q_np1_var}, {R_vi_symb});
 
 % Tangent matrix
-Kq_vi_symb = jacobian(R_vi_symb, q_np1_var);  % dR/dq in eq.(80)
+Kq_vi_symb = jacobian(R_vi_symb, q_np1_var);  % dR/dq in eq.(80),(Huang and Leyendecker, 2022)
 fns.Kq_vi = casadi.Function('Kq_vi', {q_nm1_var, q_n_var, q_np1_var}, {Kq_vi_symb});
 
 %% +++++++++++ sympletic momentum scheme, only used in 1. step ++++++++++++++++++++
 % Residual 
-R_sm_symb = param.p_0 + dLminus + f_extminus; % Legendre transformation eq.(87)
+R_sm_symb = param.p_0 + dLminus + f_extminus; % Legendre transformation eq.(87),(Huang and Leyendecker, 2022)
 fns.R_sm = casadi.Function('R_sm', {q_n_var, q_np1_var}, {R_sm_symb});
 
 % Tangent matrix
-Kq_sm_symb = jacobian(R_sm_symb, q_np1_var); % dR/dq in eq.(80)
+Kq_sm_symb = jacobian(R_sm_symb, q_np1_var); % dR/dq in eq.(80),(Huang and Leyendecker, 2022)
 fns.Kq_sm = casadi.Function('Kq_sm', {q_n_var, q_np1_var}, {Kq_sm_symb});
 
 end

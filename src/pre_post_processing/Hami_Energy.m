@@ -1,5 +1,5 @@
 function [H] = Hami_Energy(pminus, param)
-% Kinetic energy: p*invM*p/2
+% kinetic energy: p*invM*p/2
 %
 %
 H = 0;

@@ -1,4 +1,4 @@
-% plot int pot energy and kinetic energy
+% plot internal potential energy and kinetic energy
 
 dur = param.N_timesteps;
 

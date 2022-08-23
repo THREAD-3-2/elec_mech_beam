@@ -1,14 +1,16 @@
 % main function
 %
-%  An electromechanically coupled beam, July,2022, Dengpeng Huang @ LTD-FAU
-%  Ref.: D. Huang, S. Leyendecker. Computational Mechanics, 69(2022)(3):805-824.
-
+%  An electromechanically coupled beam, 
+%  Dengpeng Huang @ LTD-FAU, August 2022.
+%
+%  Reference: Huang and Leyendecker. Computational Mechanics, 69(2022)(3):805-824.
 
 clear all; clc; close all;
 tic
 
 % add paths
-addpath('casadi-osx-matlabR2015a-v3.4.5'); addpath('pre_post_processing'); addpath('integrator');
+addpath('casadi-osx-matlabR2015a-v3.4.5'); % casadi library download from: https://web.casadi.org/get/
+addpath('pre_post_processing'); addpath('integrator');
 
 % initialization
 a_ini;

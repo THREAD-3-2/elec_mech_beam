@@ -8,13 +8,13 @@ function [L] = LagrangeEqu(q_n, q_np1, q_ref, param)
 %
 % :returns: discrete Lagrange
 
-% finite diff for q_dot, eq.(72)
+% finite diff for q_dot, eq.(72),  (Huang and Leyendecker, 2022)
 q_dot = (q_np1 - q_n)./param.timestep;
 
-% midpoint rule for q, eq.(72)
+% midpoint rule for q, eq.(72),  (Huang and Leyendecker, 2022)
 q = (q_n + q_np1)/2;
 
-%L = T - V_int - V_ext, eq.(66)
+%L = T - V_int - V_ext, eq.(66),  (Huang and Leyendecker, 2022)
 L = kinEnergy_new(q_dot, param) - int_potEn(q, q_ref, param) - 0*ext_potEn(q, q_ref, param);
 end
 

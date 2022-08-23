@@ -1,4 +1,4 @@
-% plot position/displacement of the end node (0,0,0.1)
+% plot position or displacement of the end node
 
 dur = param.N_timesteps;
 q_end=zeros(size(dur,2));
