@@ -7,3 +7,5 @@ An electromechanically coupled beam model for dielectric elastomer actuators.
 Geometrically exact beam, spatially semidiscretized by 1D finite elements and then solved via variational time integration.
 
 Matlab code.
+
+Note: Before runing the code, please download CasAdi library from https://web.casadi.org/get/ and save it in the folder src. The path is loaded in the main file.
