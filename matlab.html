@@ -44,16 +44,15 @@ using the <a class="reference external" href="https://github.com/sphinx-contrib/
 <dt class="sig sig-object mat" id="src.main">
 <span class="sig-prename descclassname"><span class="pre">src.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.main" title="Permalink to this definition">¶</a></dt>
 <dd><p>main function</p>
-<p>An electromechanically coupled beam, July,2022, Dengpeng Huang &#64; LTD-FAU
-Ref.: D. Huang, S. Leyendecker. Computational Mechanics, 69(2022)(3):805-824.</p>
+<p>An electromechanically coupled beam,
+Dengpeng Huang &#64; LTD-FAU, August 2022.</p>
+<p>Reference: Huang and Leyendecker. Computational Mechanics, 69(2022)(3):805-824.</p>
 </dd></dl>
 
 <dl class="mat script">
 <dt class="sig sig-object mat" id="src.a_ini">
 <span class="sig-prename descclassname"><span class="pre">src.</span></span><span class="sig-name descname"><span class="pre">a_ini</span></span><a class="headerlink" href="#src.a_ini" title="Permalink to this definition">¶</a></dt>
-<dd><p>set Initial configuration, material parameters and boundary conditions</p>
-<p>parameter setting
-boundary conditions</p>
+<dd><p>set initial configuration, material parameters and boundary conditions</p>
 </dd></dl>
 
 <dl class="mat script">
@@ -73,7 +72,7 @@ boundary conditions</p>
 <dl class="mat script">
 <dt class="sig sig-object mat" id="src.c_NR">
 <span class="sig-prename descclassname"><span class="pre">src.</span></span><span class="sig-name descname"><span class="pre">c_NR</span></span><a class="headerlink" href="#src.c_NR" title="Permalink to this definition">¶</a></dt>
-<dd><p>Newton-Raphson scheme to solve the dEL equations</p>
+<dd><p>Newton-Raphson scheme to solve the discrete Euler-Lagrange equations</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -115,7 +114,7 @@ boundary conditions</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>eref</strong> – eref = […, phi^A,(d1)^A,(d2)^A,(d3)^A, … ](0); A=1,2</p></li>
+<li><p><strong>eref</strong> – eref = […, phi^A, (d1)^A, (d2)^A, (d3)^A, … ](0); A=1,2</p></li>
 <li><p><strong>inertia</strong> – inertia = (rho*A, M_1, M_2)</p></li>
 </ul>
 </dd>
@@ -169,8 +168,7 @@ boundary conditions</p>
 <dl class="mat script">
 <dt class="sig sig-object mat" id="src.integrator.hat_vec">
 <span class="sig-prename descclassname"><span class="pre">src.integrator.</span></span><span class="sig-name descname"><span class="pre">hat_vec</span></span><a class="headerlink" href="#src.integrator.hat_vec" title="Permalink to this definition">¶</a></dt>
-<dd><p>skew-symmetric matrix with axial vector a
-see eq(28) in Betsch[06]</p>
+<dd><p>skew-symmetric matrix with axial vector a</p>
 </dd></dl>
 
 <dl class="mat script">
@@ -405,7 +403,7 @@ see eq(28) in Betsch[06]</p>
 <dl class="mat script">
 <dt class="sig sig-object mat" id="src.pre_post_processing.Energy">
 <span class="sig-prename descclassname"><span class="pre">src.pre_post_processing.</span></span><span class="sig-name descname"><span class="pre">Energy</span></span><a class="headerlink" href="#src.pre_post_processing.Energy" title="Permalink to this definition">¶</a></dt>
-<dd><p>plot int pot energy and kinetic energy</p>
+<dd><p>plot internal potential energy and kinetic energy</p>
 </dd></dl>
 
 <dl class="mat script">
@@ -417,7 +415,7 @@ see eq(28) in Betsch[06]</p>
 <dl class="mat script">
 <dt class="sig sig-object mat" id="src.pre_post_processing.Hami_Energy">
 <span class="sig-prename descclassname"><span class="pre">src.pre_post_processing.</span></span><span class="sig-name descname"><span class="pre">Hami_Energy</span></span><a class="headerlink" href="#src.pre_post_processing.Hami_Energy" title="Permalink to this definition">¶</a></dt>
-<dd><p>Kinetic energy: p*invM*p/2</p>
+<dd><p>kinetic energy: p*invM*p/2</p>
 </dd></dl>
 
 <dl class="mat script">
@@ -429,13 +427,13 @@ see eq(28) in Betsch[06]</p>
 <dl class="mat script">
 <dt class="sig sig-object mat" id="src.pre_post_processing.Hd_red">
 <span class="sig-prename descclassname"><span class="pre">src.pre_post_processing.</span></span><span class="sig-name descname"><span class="pre">Hd_red</span></span><a class="headerlink" href="#src.pre_post_processing.Hd_red" title="Permalink to this definition">¶</a></dt>
-<dd><p>momentum p-</p>
+<dd><p>plot reduced discrete Hamiltonian</p>
 </dd></dl>
 
 <dl class="mat script">
 <dt class="sig sig-object mat" id="src.pre_post_processing.path_s">
 <span class="sig-prename descclassname"><span class="pre">src.pre_post_processing.</span></span><span class="sig-name descname"><span class="pre">path_s</span></span><a class="headerlink" href="#src.pre_post_processing.path_s" title="Permalink to this definition">¶</a></dt>
-<dd><p>generates initial configutaiton q for straight beam with length L</p>
+<dd><p>generating initial configutaiton q for straight beam with length L</p>
 </dd></dl>
 
 <dl class="mat script">
@@ -460,7 +458,7 @@ provided, saved to code folder under sim_vid</p>
 <dl class="mat script">
 <dt class="sig sig-object mat" id="src.pre_post_processing.plot_u">
 <span class="sig-prename descclassname"><span class="pre">src.pre_post_processing.</span></span><span class="sig-name descname"><span class="pre">plot_u</span></span><a class="headerlink" href="#src.pre_post_processing.plot_u" title="Permalink to this definition">¶</a></dt>
-<dd><p>plot position/displacement of the end node (0,0,0.1)</p>
+<dd><p>plot position or displacement of the end node</p>
 </dd></dl>
 
 </section>
