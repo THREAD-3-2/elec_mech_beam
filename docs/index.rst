@@ -14,6 +14,7 @@ Contents
 
 .. toctree::
    installation
+   example
    ibvp
    vi
    matlab
