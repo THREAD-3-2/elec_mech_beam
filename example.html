@@ -47,11 +47,12 @@ including uniaxial contraction, shear, bending and torsion.</p>
 </section>
 <section id="parameter-setting">
 <h2>Parameter setting<a class="headerlink" href="#parameter-setting" title="Permalink to this heading">¶</a></h2>
-<p>The types of boundary conditions are set in the code file a.ini as:</p>
+<p>The types of boundary conditions are set in src/a.ini as:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># boundary conditions:  &#39;end&#39; (contraction) / &#39;torsion&#39; / &#39;shear&#39; / &#39;bending&#39;</span>
 param.eboun <span class="o">=</span> <span class="s1">&#39;end&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
+<p>The value of electric potential in the boundary condition is set in src/integrator/update.m.</p>
 <p>The time step size, beam size, mesh size are set as:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>param.timestep  <span class="o">=</span> 1e-4<span class="p">;</span> <span class="c1"># in [ms]</span>
 param.totaltime <span class="o">=</span> <span class="m">0</span>.1<span class="p">;</span> <span class="c1"># in [ms]</span>
