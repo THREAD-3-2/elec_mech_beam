@@ -17,13 +17,15 @@ including uniaxial contraction, shear, bending and torsion.
 Parameter setting
 --------------------
 
-The types of boundary conditions are set in the code file a.ini as:
+The types of boundary conditions are set in src/a.ini as:
 
 .. code-block:: bash
 
     # boundary conditions:  'end' (contraction) / 'torsion' / 'shear' / 'bending' 
     param.eboun = 'end';
-    
+
+The value of electric potential in the boundary condition is set in src/integrator/update.m.
+
 The time step size, beam size, mesh size are set as:
 
 .. code-block:: bash
