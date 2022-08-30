@@ -7,7 +7,7 @@ param.eboun = 'end'; % 'end' (contraction) / 'torsion' / 'shear' / 'bending'
 
 switch param.eboun
     case 'end'
-        param.timestep  = 1e-4; % in [ms]
+        param.timestep  = 1e-3; % in [ms]
         param.totaltime = 0.1; % in [ms]
         param.L = 0.1; % length of beam
         param.b = 0.02; param.h = 0.02; % size of cross section
@@ -15,7 +15,7 @@ switch param.eboun
         param.nec = 5; % number element in each DEA cell
         param.n_el_nodes = param.ncell*param.nec; % number of element
         param.n_kn_nodes = param.n_el_nodes+1;% number of node
-        param.eta = 0; % viscosity
+        param.eta = 0.25; % viscosity
     case 'torsion'
         param.timestep  = 1e-3; % in [ms]
         param.totaltime = 0.2; % in [ms]
