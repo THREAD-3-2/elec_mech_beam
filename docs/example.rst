@@ -49,5 +49,4 @@ By applying the "end" boundary condition, the contraction of the beam is obtaine
 
 .. image:: end.jpg
 
-
 .. image:: disp.jpg
