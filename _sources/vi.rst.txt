@@ -175,7 +175,7 @@ by use of the nodal reparametrization. The generalized configuration of the elec
         \mathbf{u}=\begin{bmatrix} \mathbf{u}_\varphi& \boldsymbol\theta&\mathbf{v}\end{bmatrix}^T
     \end{align}
 
-with :math:`\mathbf{u}_\varphi,  \boldsymbol\theta$ and $\mathbf{v}` characterizing the incremental displacement, the incremental 
+with :math:`\mathbf{u}_\varphi,  \boldsymbol\theta and \mathbf{v}` characterizing the incremental displacement, the incremental 
 rotation and the incremental electric potential, respectively. In this case, the nodal configuration for the next time step can 
 be updated as
 

@@ -1,0 +1,155 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>Example &#8212; elec_mech_beam 0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Initial boundary value problem" href="ibvp.html" />
+    <link rel="prev" title="Installation" href="installation.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="example">
+<span id="id1"></span><h1>Example<a class="headerlink" href="#example" title="Permalink to this heading">¶</a></h1>
+<section id="problem-description">
+<h2>Problem description<a class="headerlink" href="#problem-description" title="Permalink to this heading">¶</a></h2>
+<p>In the numerical example, a straight beam with length <span class="math notranslate nohighlight">\(L\)</span> and squared cross section <span class="math notranslate nohighlight">\(b \times b\)</span> is considered.
+The beam is composed of stacked DEA cells, where each DEA cell is discretized with finite elements. The beam is totally fixed at the bottom
+and the electrical boundary conditions are imposed on the beam nodes, as shown in the following figure. The contractions of DEA cells will lead to different deformations in the beam,
+including uniaxial contraction, shear, bending and torsion.</p>
+<img alt="_images/beam_geo.pdf" src="_images/beam_geo.pdf" />
+</section>
+<section id="parameter-setting">
+<h2>Parameter setting<a class="headerlink" href="#parameter-setting" title="Permalink to this heading">¶</a></h2>
+<p>The types of boundary conditions are set in the code file a.ini as:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># boundary conditions:  &#39;end&#39; (contraction) / &#39;torsion&#39; / &#39;shear&#39; / &#39;bending&#39;</span>
+param.eboun <span class="o">=</span> <span class="s1">&#39;end&#39;</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>The time step size, beam size, mesh size are set as:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>param.timestep  <span class="o">=</span> 1e-4<span class="p">;</span> <span class="c1"># in [ms]</span>
+param.totaltime <span class="o">=</span> <span class="m">0</span>.1<span class="p">;</span> <span class="c1"># in [ms]</span>
+param.L <span class="o">=</span> <span class="m">0</span>.1<span class="p">;</span> <span class="c1"># length of beam</span>
+param.b <span class="o">=</span> <span class="m">0</span>.02<span class="p">;</span> param.h <span class="o">=</span> <span class="m">0</span>.02<span class="p">;</span> <span class="c1"># size of cross section</span>
+param.ncell <span class="o">=</span> <span class="m">1</span><span class="p">;</span> <span class="c1"># number of DEA cell</span>
+param.nec <span class="o">=</span> <span class="m">5</span><span class="p">;</span> <span class="c1"># number element in each DEA cell</span>
+</pre></div>
+</div>
+</section>
+<section id="simulation-results">
+<h2>Simulation results<a class="headerlink" href="#simulation-results" title="Permalink to this heading">¶</a></h2>
+<p>The simulation is visualized by ploting the configurations or making a video:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>plot_FE<span class="o">(</span>res.Q<span class="o">(</span>:,end<span class="o">)</span>, param, res, <span class="s1">&#39;v&#39;</span><span class="o">)</span><span class="p">;</span> <span class="c1"># plot the final configuration</span>
+plot_FE_mov<span class="o">(</span>res.Q, param, el_col<span class="o">)</span><span class="p">;</span> <span class="c1"># make video of the simulation</span>
+</pre></div>
+</div>
+<p>By applying the “end” boundary condition, the contraction of the beam is obtained as following:</p>
+<img alt="_images/end.jpg" src="_images/end.jpg" />
+<img alt="_images/disp.jpg" src="_images/disp.jpg" />
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">elec_mech_beam</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Example</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#problem-description">Problem description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#parameter-setting">Parameter setting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#simulation-results">Simulation results</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ibvp.html">Initial boundary value problem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vi.html">Variational integrator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="matlab.html">MATLAB code</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="installation.html" title="previous chapter">Installation</a></li>
+      <li>Next: <a href="ibvp.html" title="next chapter">Initial boundary value problem</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2022, Dengpeng Huang.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.1.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/example.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

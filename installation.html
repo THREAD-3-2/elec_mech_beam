@@ -16,7 +16,7 @@
     <script src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Initial boundary value problem" href="ibvp.html" />
+    <link rel="next" title="Example" href="example.html" />
     <link rel="prev" title="Documentation of elec_mech_beam" href="index.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
@@ -45,23 +45,26 @@ python3 -m venv venv
 
 <span class="c1"># activate virtual environment</span>
 . ./venv/bin/activate
-<span class="c1"># install the project in editable state</span>
-pip install -e .
 
-<span class="c1"># optionally install JupyterLab and Jupyter Widgets</span>
-pip install jupyterlab ipywidgets
-</pre></div>
-</div>
-<p>For development, the packages listed in <cite>requirements.txt</cite> need to be installed:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install -r requirements.txt
-</pre></div>
-</div>
-<p>To build the documentation locally, run:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> docs
+<span class="c1"># install packages listed in `requirements.txt`, e.g. sphinx</span>
+pip install -r requirements.txt
+
+<span class="c1"># to build the documentation locally, run:</span>
+<span class="nb">cd</span> docs
 make doctest <span class="c1"># optionally check if your examples work</span>
 make html
 </pre></div>
 </div>
+</section>
+<section id="library-installation">
+<h2>Library installation<a class="headerlink" href="#library-installation" title="Permalink to this heading">¶</a></h2>
+<p>In this code, the CasAdi library is required to take the automatic differentiation. Firstly, download a proper version of the CasAdi library from <a class="reference external" href="https://web.casadi.org/get/">https://web.casadi.org/get/</a>.
+Then, save it in the source code folder “src”. The path of the library is added in the code main.m as following:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># add CasAdi library path</span>
+addpath<span class="o">(</span><span class="s1">&#39;casadi-osx-matlabR2015a-v3.4.5&#39;</span><span class="o">)</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>‘casadi-osx-matlabR2015a-v3.4.5’ is a version for Mac OS, you can chose others according to your system.</p>
 </section>
 </section>
 
@@ -85,8 +88,10 @@ make html
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Installation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#virtual-environment">Virtual environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#library-installation">Library installation</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="example.html">Example</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ibvp.html">Initial boundary value problem</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vi.html">Variational integrator</a></li>
 <li class="toctree-l1"><a class="reference internal" href="matlab.html">MATLAB code</a></li>
@@ -97,7 +102,7 @@ make html
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
       <li>Previous: <a href="index.html" title="previous chapter">Documentation of <cite>elec_mech_beam</cite></a></li>
-      <li>Next: <a href="ibvp.html" title="next chapter">Initial boundary value problem</a></li>
+      <li>Next: <a href="example.html" title="next chapter">Example</a></li>
   </ul></li>
 </ul>
 </div>
