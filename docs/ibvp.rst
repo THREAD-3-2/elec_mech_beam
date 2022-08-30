@@ -13,6 +13,7 @@ Balance equations
 The local balance law of linear momentum in the dynamic process is given by
 
 .. math::
+    :name: eq:1
 
     \begin{align}
         \nabla_{\mathbf{X}} \cdot \mathbf{P} + \rho_0 \bar{\mathbf{b}} =\rho_0\mathbf{\ddot{u}} \qquad {\rm in} \quad B
@@ -21,6 +22,7 @@ The local balance law of linear momentum in the dynamic process is given by
 subject to the Dirichlet boundary conditions
 
 .. math::
+    :name: eq:2
 
     \begin{align}
         \mathbf{u}&=\bar{\mathbf{u}} \qquad {\rm on} \quad \partial_{u} B,
@@ -29,6 +31,7 @@ subject to the Dirichlet boundary conditions
 the Neumann boundary conditions
 
 .. math::
+    :name: eq:3
 
     \begin{align}
         \mathbf{P}\cdot \mathbf{N}&=\bar{\mathbf{T}} \qquad {\rm on} \quad \partial_{\sigma} B
@@ -37,6 +40,7 @@ the Neumann boundary conditions
 and the initial conditions
 
 .. math::
+    :name: eq:4
 
     \begin{align}
         \mathbf{\dot{u}}=\mathbf{0},\mathbf{\ddot{u}}=\mathbf{0},
@@ -47,6 +51,7 @@ where :math:`\mathbf{P}` is the first Piola-Kirchhoff stress tensor, :math:`\rho
 :math:`\bar{\mathbf{T}}` is the prescribed traction. The local balance of angular momentum reads
 
 .. math::
+    :name: eq:5
 
     \begin{align}
         \mathbf{F}\mathbf{P}^T = \mathbf{P}\mathbf{F}^T,
@@ -62,6 +67,7 @@ Maxwell equations
 By neglecting the magnetic field, the Maxwell equations are given by
 
 .. math::
+    :name: eq:6
 
     \begin{align}
         \nabla_{\mathbf{X}} \times \mathbf{E}^e=\mathbf{0}, \;\;\;\; \nabla_{\mathbf{X}} \cdot \mathbf{D}=0 \qquad {\rm in} \quad B
@@ -70,6 +76,7 @@ By neglecting the magnetic field, the Maxwell equations are given by
 subject to the Dirichlet boundary conditions
 
 .. math::
+    :name: eq:7
 
     \begin{align}
         \phi&=\bar{\phi} \qquad {\rm on} \quad \partial_{\phi} B
@@ -78,6 +85,7 @@ subject to the Dirichlet boundary conditions
 and the Neumann boundary conditions
 
 .. math::
+    :name: eq:8
 
     \begin{align}
         \mathbf{D}\cdot \mathbf{N}&=\bar{Q} \qquad {\rm on} \quad \partial_D B
@@ -89,6 +97,7 @@ and :math:`\bar{Q}` the prescribed charges per unit area on the boundary :math:`
 The Maxwell equations introduced above lead to the definition of the electric field as the gradient of a scalar electric potential
 
 .. math::
+    :name: eq:9
 
     \begin{align} 
         \mathbf{E}^e=-\frac{\partial \phi}{\partial \mathbf{X}}.
@@ -104,6 +113,7 @@ In the Cosserat formulation of geometrically exact beam, the placement of a mate
 beam is given by
 
 .. math::
+    :name: eq:10
 
     \begin{align}
         \mathbf{x}(X^k,s,t)=\boldsymbol{\varphi}(s,t)+X^k \mathbf{d}_k(s,t), \;\;\;\; k=1,2.
@@ -117,7 +127,8 @@ For an initially straight beam, the deformation gradient at a point :math:`(X^1,
  see (Auricchio, 2008),
 
 .. math::
-    
+    :name: eq:11
+
     \begin{align}
         \mathbf{F}(X^1, X^2, s,t)&=\frac{\partial \mathbf{x}}{\partial \mathbf{X}}=\frac{\partial \mathbf{x}}{\partial X_i} \otimes  \mathbf{d}_i(s,0) \nonumber\\
         &=\left[ \mathbf{I} + \left(\frac{\partial \boldsymbol{\varphi}(s,t)}{\partial s} - \mathbf{d}_3(s,t) + X^1 \frac{\partial \mathbf{d}_1(s,t)}{\partial s} + X^2 \frac{\partial \mathbf{d}_2(s,t)}{\partial s} \right)\otimes  \mathbf{d}_3(s,t) \right] \boldsymbol{\Lambda}(s),
@@ -131,7 +142,8 @@ the electric potential at a point :math:`(X^1,X^2,s)` is represented by the elec
 from the beam node to the point :math:`(X^1,X^2)` on the cross section. Similar to the local description of the cross section, the electric potential on the cross section is given by
 
  .. math::
-    
+    :name: eq:12
+
     \begin{align} 
         \phi (X^1,X^2,s)=\phi _o(s) + X^1 \alpha(s) + X^2 \beta(s)
     \end{align}
@@ -146,7 +158,8 @@ To compute the gradient of the electric potential for the beam, a similar approa
 Based on the formulation of the electric potential, the electric field at :math:`(X^1,X^2,s)` in the beam can be computed as
 
  .. math::
-    
+    :name: eq:13
+
     \begin{align} 
         \mathbf{E}^e(X^1,X^2,s) &= -\frac{\partial \phi}{\partial X_i} \otimes  \mathbf{d}_i(s,0)\\
         & =-\left[ \alpha(s)  \mathbf{d}_1(s,0) + \beta(s)  \mathbf{d}_2(s,0) + \left( \frac{\partial \phi_o(s)}{\partial s}  + X^1 \frac{\partial  \alpha(s)}{\partial s} + X^2 \frac{\partial  \beta(s)}{\partial s} \right) \mathbf{d}_3(s,0) \right]. \label{Ee}
@@ -164,6 +177,7 @@ and the mechanical deformation is described by the free energy function :math:`\
 in the constitutive equations
 
 .. math::
+    :name: eq:14
 
     \begin{align}
         \mathbf{D}=-\rho_0\frac{\partial \Omega(\mathbf{F}, \mathbf{E}^e)}{\partial \mathbf{E}^e},  \;\;\;\;  \mathbf{P}=\rho_0\frac{\partial \Omega(\mathbf{F}, \mathbf{E}^e)}{\partial \mathbf{F}}.
@@ -172,6 +186,7 @@ in the constitutive equations
 For the dielectric materials, the electromechanical coupling can be described by the free energy function with the additive form
 
 .. math::
+    :name: eq:15
 
     \begin{align}
         \Omega(\mathbf{F}, \mathbf{E}^e) = \Omega^m (\mathbf{F}) + \Omega^{\rm em}(\mathbf{F}, \mathbf{E}^e)  + \Omega^e( \mathbf{E}^e),
@@ -183,7 +198,8 @@ to the electomechanical coupling and :math:`\Omega^e( \mathbf{E}^e)` referring t
 A widely used strain energy density for dielectric elastomer is given by
 
 .. math::
-    
+    :name: eq:16
+
     \begin{align}
         \Omega(\mathbf{C},\mathbf{E}^e)=\underbrace{ \frac{\mu}{2} \left( \mathbf{C} : \mathbf{1}-3 \right) - \mu {\rm ln} J + \frac{\lambda}{2} ({\rm ln} J)^2}_{\text{Neo-Hookean}} +\underbrace{c_1 \mathbf{E}^e \cdot \mathbf{E}^e + c_2 \mathbf{C} : (\mathbf{E}^e \otimes \mathbf{E}^e)}_{\text{Polarization in dielectric material}} - \underbrace{ \frac{1}{2} \varepsilon_0 J \mathbf{C}^{-1} : (\mathbf{E}^e \otimes \mathbf{E}^e)}_{\text{Free space term in vacuum}}
     \end{align}
@@ -196,6 +212,7 @@ effect in vacuum. The last two terms characterize the electromechanical coupling
 The strain energy function for beam is obtained by integrating :math:`\Omega(\mathbf{C},\mathbf{E}^e)` over the cross section
 
 .. math::
+    :name: eq:17
     
     \begin{align}
         \Omega_b (\boldsymbol{\Gamma}, \mathbf{K}, \boldsymbol{\varepsilon}) =\int_{\Sigma} \Omega(\mathbf{C},\mathbf{E}^e) dA,
