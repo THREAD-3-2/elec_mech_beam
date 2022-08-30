@@ -54,7 +54,7 @@ param.eboun <span class="o">=</span> <span class="s1">&#39;end&#39;</span><span 
 </div>
 <p>The value of electric potential in the boundary condition is set in src/integrator/update.m.</p>
 <p>The time step size, beam size, mesh size are set as:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>param.timestep  <span class="o">=</span> 1e-4<span class="p">;</span> <span class="c1"># in [ms]</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>param.timestep  <span class="o">=</span> 1e-3<span class="p">;</span> <span class="c1"># in [ms], smaller time step may lead to badly scaled tangent matrix</span>
 param.totaltime <span class="o">=</span> <span class="m">0</span>.1<span class="p">;</span> <span class="c1"># in [ms]</span>
 param.L <span class="o">=</span> <span class="m">0</span>.1<span class="p">;</span> <span class="c1"># length of beam</span>
 param.b <span class="o">=</span> <span class="m">0</span>.02<span class="p">;</span> param.h <span class="o">=</span> <span class="m">0</span>.02<span class="p">;</span> <span class="c1"># size of cross section</span>
@@ -67,7 +67,7 @@ param.nec <span class="o">=</span> <span class="m">5</span><span class="p">;</sp
 <h2>Simulation results<a class="headerlink" href="#simulation-results" title="Permalink to this heading">¶</a></h2>
 <p>The simulation is visualized by ploting the configurations or making a video:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>plot_FE<span class="o">(</span>res.Q<span class="o">(</span>:,end<span class="o">)</span>, param, res, <span class="s1">&#39;v&#39;</span><span class="o">)</span><span class="p">;</span> <span class="c1"># plot the final configuration</span>
-plot_FE_mov<span class="o">(</span>res.Q, param, el_col<span class="o">)</span><span class="p">;</span> <span class="c1"># make video of the simulation</span>
+plot_FE_mov<span class="o">(</span>res.Q, param<span class="o">)</span><span class="p">;</span> <span class="c1"># make video of the simulation</span>
 </pre></div>
 </div>
 <p>By applying the “end” boundary condition, the contraction of the beam is obtained as following:</p>

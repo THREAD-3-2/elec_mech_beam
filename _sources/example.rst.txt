@@ -30,7 +30,7 @@ The time step size, beam size, mesh size are set as:
 
 .. code-block:: bash
 
-    param.timestep  = 1e-4; # in [ms]
+    param.timestep  = 1e-3; # in [ms], smaller time step may lead to badly scaled tangent matrix
     param.totaltime = 0.1; # in [ms]
     param.L = 0.1; # length of beam
     param.b = 0.02; param.h = 0.02; # size of cross section
@@ -45,7 +45,7 @@ The simulation is visualized by ploting the configurations or making a video:
 .. code-block:: bash
 
     plot_FE(res.Q(:,end), param, res, 'v'); # plot the final configuration
-    plot_FE_mov(res.Q, param, el_col); # make video of the simulation
+    plot_FE_mov(res.Q, param); # make video of the simulation
 
 By applying the "end" boundary condition, the contraction of the beam is obtained as following:
 
