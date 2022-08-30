@@ -49,6 +49,6 @@ The simulation is visualized by ploting the configurations or making a video:
 
 By applying the "end" boundary condition, the contraction of the beam is obtained as following:
 
-.. image:: end.jpg
+.. image:: config.jpg
 
 .. image:: disp.jpg
