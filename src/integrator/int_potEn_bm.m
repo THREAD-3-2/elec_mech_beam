@@ -110,7 +110,7 @@ for i = 1:ngp
     q = [dv_ds(2); dv_ds(3); 0]; % q = [dalpha/ds, dbeta/ds, 0]
     
     % strain energy for beam
-    % W beam strain gama,kappa
+    % W beam strain gama,kappa, see github doc eq.(17)
     [W1, W2, W3, W4] = int_potEn_bm_w(param.b, param.h, param.mu, param.lam, param.c1, param.c2, p, q, d1, d2, d3, d01, d02, d03, g, g0, k, k0);
     
     %------------------------------------

@@ -25,11 +25,11 @@ dLminus = jacobian(Lminus, q_n_var)';  %dL(qn, qn+1)/dqn  % direvative to q_n !!
 dLplus = jacobian(Lplus, q_n_var)'; %dL(qn-1, qn)/dqn
 
 %++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-%% Viscoelastic forces
+%% Viscoelastic forces, see github doc eq.(29)
 f_extminus  =  -1/2*viscos_force(q_n_var, q_np1_var, param.q_ref, param);
 f_extplus = -1/2*viscos_force(q_nm1_var, q_n_var, param.q_ref, param);
 
-%% Constraints
+%% Constraints, see github doc eq.(20)
 g = constraints(q_n_var,param.q_ref, param); % symbolic fucntion
 fns.g = casadi.Function('g_fnc', {q_n_var}, {g}); % casadi function, symbolic variables can be imposed with numerical values 
 
@@ -42,11 +42,11 @@ pminus_symb = -dLminus - f_extminus;
 fns.pminus = casadi.Function('pminus_symb',{q_n_var, q_np1_var}, {pminus_symb});
 
 %% +++++++++++++Variational integrator+++++++++++++++++++++++++++++++++++++++++++++++++++++
-% Residual
+% Residual, see github doc eq.(28)
 R_vi_symb = dLplus + dLminus + f_extminus + f_extplus; % dEL in eq.(73), (Huang and Leyendecker, 2022)
 fns.R_vi = casadi.Function('R_vi', {q_nm1_var, q_n_var, q_np1_var}, {R_vi_symb});
 
-% Tangent matrix
+% Tangent matrix, see github doc eq.(33)
 Kq_vi_symb = jacobian(R_vi_symb, q_np1_var);  % dR/dq in eq.(80),(Huang and Leyendecker, 2022)
 fns.Kq_vi = casadi.Function('Kq_vi', {q_nm1_var, q_n_var, q_np1_var}, {Kq_vi_symb});
 

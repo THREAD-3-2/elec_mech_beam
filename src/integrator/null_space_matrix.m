@@ -27,7 +27,7 @@ for in =2:param.n_kn_nodes
     iq_b1_phi__b1_d3(in,:)=[param.iq.bm(in).phi, param.iq.bm(in).d1, param.iq.bm(in).d2, param.iq.bm(in).d3, param.iq.bm(in).v];
     iu_b1_wphi__b1_om(in,:)=[param.iu.bm(in).wphi, param.iu.bm(in).om,param.iu.bm(in).ov];
     
-    % null space matrix for beam node, Leye.phd thesis p94-eq(5.4.32)
+    % null space matrix for beam node, Leye.phd thesis p94-eq(5.4.32), , or see github doc eq.(30)
     x(iq_b1_phi__b1_d3(in,:),iu_b1_wphi__b1_om(in,:))=...
         [eye(3),       zeros(3,3),                                         zeros(3,3);
         zeros(3,3),  -hat_vec(q_bm(param.iq.bm(in).d1)),   zeros(3,3);

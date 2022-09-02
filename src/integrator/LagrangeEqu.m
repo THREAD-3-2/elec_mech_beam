@@ -8,10 +8,10 @@ function [L] = LagrangeEqu(q_n, q_np1, q_ref, param)
 %
 % :returns: discrete Lagrange
 
-% finite diff for q_dot, eq.(72),  (Huang and Leyendecker, 2022)
+% finite diff for q_dot, eq.(72),  (Huang and Leyendecker, 2022), or see github doc eq.(27)
 q_dot = (q_np1 - q_n)./param.timestep;
 
-% midpoint rule for q, eq.(72),  (Huang and Leyendecker, 2022)
+% midpoint rule for q, eq.(72),  (Huang and Leyendecker, 2022), or see github doc eq.(27)
 q = (q_n + q_np1)/2;
 
 %L = T - V_int - V_ext, eq.(66),  (Huang and Leyendecker, 2022)

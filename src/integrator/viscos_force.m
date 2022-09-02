@@ -57,7 +57,7 @@ for j=1:param.n_el_nodes % loop all elements/elemental assembly
         % dF/dqn
         dF_dqn = jacobian(F, q_n); % 9*78
         
-        % double contraction dF/dqn : P
+        % double contraction dF/dqn : P, , or see github doc eq.(25)
         dFdqnP=(dF_dqn(1,:).*0)';
         for jj=1:size(q_n,1)
             for ii=1:9

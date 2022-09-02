@@ -111,10 +111,10 @@ for i=1:ngp
         end
         Je=det(Jac);
         
-        % electricla field
+        % electricla field, see github doc eq.(13)
         Ef = - ( vv(2)*dir0(p1) + vv(3)*dir0(p2) + (dv_ds(1) + XY(1)*dv_ds(2) + XY(2)*dv_ds(3) )*dir0(p3) ); % 1*3
         
-        % deformation gradient
+        % deformation gradient, see github doc eq.(11)
         a = dp_ds - dir(p3) + XY(1)*ddir_ds(p1) + XY(2)*ddir_ds(p2);
         F =  (eye(3,3) + a' * dir(p3)) * Lam;
         
@@ -128,7 +128,7 @@ for i=1:ngp
         C = F' * F;
         C_inv = F_inv * F_inv';
         
-        % mechanical free energy,  integration over cross section
+        % mechanical free energy,  integration over cross section, see github doc eq.(16)
         W1 = W1 + (param.mu/2*(trace(C)-3) - param.mu*log(J) +param.lam/2*log(J)*log(J) )*Je*wht;
         %W1 = W1 + (param.mu/2*(trace(C)-3) - param.mu*dot(a,dir(p3)) +param.lam/2*dot(a,dir(p3))*dot(a,dir(p3)) )*Je*wht;
         
@@ -142,7 +142,7 @@ for i=1:ngp
             end
         end
         
-        % electrical free energy,  integration over cross section
+        % electrical free energy,  integration over cross section, see github doc eq.(16)
         W2 = W2 + (param.c1*dot(Ef,Ef) + param.c2*CEE - param.ep0/2*J*CinvEE )*Je*wht;
         
     end

@@ -36,7 +36,7 @@ switch param.eboun
         x(13:15,1) = [0, 0, 0]';
 end
 %% ===============================================================
-% Leye 08a partIII eq(37),
+% Leye 08a partIII eq(37), , or see github doc eq.(32)
 % nodal reparametrisation for mechanical dof: q_n+1 = F(q_n,u), corresponding to P_int
 for in = 2:param.n_kn_nodes
     
