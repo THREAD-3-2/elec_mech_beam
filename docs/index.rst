@@ -1,7 +1,5 @@
 ========================================
- elec_mech_beam
- 
- Documentation
+ `elec_mech_beam` Documentation
 ========================================
 
 `elec_mech_beam <https://github.com/THREAD-3-2/elec_mech_beam>`_
