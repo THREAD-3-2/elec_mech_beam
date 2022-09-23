@@ -1,4 +1,4 @@
-# electromechanically coupled beam model
+# Electromechanically coupled beam model
 ![CI](https://github.com/THREAD-3-2/elec_mech_beam/workflows/CI/badge.svg)
 [![documentation](https://img.shields.io/badge/docs-passing-<COLOR>.svg)](https://THREAD-3-2.github.io/elec_mech_beam/)
 
