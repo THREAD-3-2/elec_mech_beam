@@ -29,12 +29,12 @@ install the package in a virtual environment like so:
 Library installation
 =====================
 
-In this code, the CasAdi library is required to take the automatic differentiation. Firstly, download a proper version of the CasAdi library from https://web.casadi.org/get/.
+In this code, the CasADi library is required to take the automatic differentiation. Firstly, download a proper version of the CasADi library from https://web.casadi.org/get/.
 Then, save it in the source code folder "src". The path of the library is added in the code main.m as following:
 
 .. code-block:: bash
 
-    # add CasAdi library path
+    # add CasADi library path
     addpath('casadi-osx-matlabR2015a-v3.4.5');
 
 'casadi-osx-matlabR2015a-v3.4.5' is a version for Mac OS, you can chose others according to your system.
